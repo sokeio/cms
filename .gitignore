@@ -24,4 +24,4 @@ Homestead.json
 example/composer.lock
 .idea
 example/platform/*
-example/public/*
+example/public/platform/*
