@@ -197,8 +197,9 @@ class PostCrud extends CrudManager
                 return $model;
             })
             ->AfterSave(function ($model, $manager) {
-                //TODO:TAGS
+                //TODO:TAGS em them luu vao tag he
                 Log::info($manager->getData()->tags);
+                Log::info($manager->getData()->categorie_ids);
 
                 return $model;
             })
