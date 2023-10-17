@@ -66,6 +66,9 @@ class PostCrud extends CrudManager
                 ->Title('Tags')
                 ->Type('tagify')
                 ->NoBindData()
+                ->FieldOption(function () {
+                    return ['whitelistAction' => 'searchTag'];
+                })
                 ->When(function ($item, $manager) {
                     return !$manager->IsTable();
                 }),
@@ -178,6 +181,7 @@ class PostCrud extends CrudManager
                 ];
             })
             ->Item($this->GetFields())
+           
             ->Action('changeStatus', function ($params, $compoent) {
                 ['id' => $id, 'status' => $status] = $params;
                 ($this->GetModel())::where('id', $id)->update(['status' => $status]);
@@ -214,6 +218,17 @@ class PostCrud extends CrudManager
                     return 'Update Post success';
                 }
                 return 'Create Post success';
+            })
+            ->Action('searchTag', function ($params, $compoent) {
+                // dd($params);
+                // $compoent->showMessage(json_encode($params));
+                return [[
+                    'value' => 1,
+                    'text' => 'text 1'
+                ], [
+                    'value' => 2,
+                    'text' => 'text 2'
+                ]];
             })
             ->Item($this->GetFields());
     }
