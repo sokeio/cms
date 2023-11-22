@@ -16,7 +16,7 @@
               </a>
             </header>
             <a href="post-image.html">
-              <img class="card-img" src="/platform/themes/Cms/img/articles/18.jpg" alt="" />
+              <img class="card-img" src="/platform/themes/Sokeio/img/articles/18.jpg" alt="" />
             </a>
             <div class="card-body">
               <p class="card-text">Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. </p>
@@ -33,7 +33,7 @@
               </a>
             </header>
             <a href="post-image.html">
-              <img class="card-img" src="/platform/themes/Cms/img/articles/22.jpg" alt="" />
+              <img class="card-img" src="/platform/themes/Sokeio/img/articles/22.jpg" alt="" />
             </a>
             <div class="card-body">
               <p class="card-text">Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. </p>
@@ -51,7 +51,7 @@
               </a>
             </header>
             <a href="post-image.html">
-              <img class="card-img" src="/platform/themes/Cms/img/articles/3.jpg" alt="" />
+              <img class="card-img" src="/platform/themes/Sokeio/img/articles/3.jpg" alt="" />
             </a>
             <div class="card-body">
               <p class="card-text">Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. </p>
@@ -68,7 +68,7 @@
               </a>
             </header>
             <a href="post-image.html">
-              <img class="card-img" src="/platform/themes/Cms/img/articles/20.jpg" alt="" />
+              <img class="card-img" src="/platform/themes/Sokeio/img/articles/20.jpg" alt="" />
             </a>
             <div class="card-body">
               <p class="card-text">Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. </p>
@@ -86,7 +86,7 @@
               </a>
             </header>
             <a href="post-image.html">
-              <img class="card-img" src="/platform/themes/Cms/img/articles/5.jpg" alt="" />
+              <img class="card-img" src="/platform/themes/Sokeio/img/articles/5.jpg" alt="" />
             </a>
             <div class="card-body">
               <p class="card-text">Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. </p>
@@ -103,7 +103,7 @@
               </a>
             </header>
             <a href="post-image.html">
-              <img class="card-img" src="/platform/themes/Cms/img/articles/1.jpg" alt="" />
+              <img class="card-img" src="/platform/themes/Sokeio/img/articles/1.jpg" alt="" />
             </a>
             <div class="card-body">
               <p class="card-text">Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. </p>
@@ -147,22 +147,22 @@
         <div class="row g-0">
           <div class="col-3">
             <a class="photo" href="#">
-              <img class="img-fluid" src="/platform/themes/Cms/img/instagram/1.jpg" alt="" />
+              <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/1.jpg" alt="" />
             </a>
           </div>
           <div class="col-3">
             <a class="photo" href="#">
-              <img class="img-fluid" src="/platform/themes/Cms/img/instagram/2.jpg" alt="" />
+              <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/2.jpg" alt="" />
             </a>
           </div>
           <div class="col-3">
             <a class="photo" href="#">
-              <img class="img-fluid" src="/platform/themes/Cms/img/instagram/3.jpg" alt="" />
+              <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/3.jpg" alt="" />
             </a>
           </div>
           <div class="col-3">
             <a class="photo" href="#">
-              <img class="img-fluid" src="/platform/themes/Cms/img/instagram/4.jpg" alt="" />
+              <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/4.jpg" alt="" />
             </a>
           </div>
         </div>
@@ -171,22 +171,22 @@
         <div class="row g-0">
           <div class="col-3">
             <a class="photo" href="#">
-              <img class="img-fluid" src="/platform/themes/Cms/img/instagram/5.jpg" alt="" />
+              <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/5.jpg" alt="" />
             </a>
           </div>
           <div class="col-3">
             <a class="photo" href="#">
-              <img class="img-fluid" src="/platform/themes/Cms/img/instagram/6.jpg" alt="" />
+              <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/6.jpg" alt="" />
             </a>
           </div>
           <div class="col-3">
             <a class="photo" href="#">
-              <img class="img-fluid" src="/platform/themes/Cms/img/instagram/7.jpg" alt="" />
+              <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/7.jpg" alt="" />
             </a>
           </div>
           <div class="col-3">
             <a class="photo" href="#">
-              <img class="img-fluid" src="/platform/themes/Cms/img/instagram/8.jpg" alt="" />
+              <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/8.jpg" alt="" />
             </a>
           </div>
         </div>

@@ -1,13 +1,13 @@
 {
   "id": "theme-newskit-74f266cb-f9fd-4a51-8576-97582b4779bb2391871",
-  "name": "Cms",
+  "name": "Sokeio",
   "alias": "cms",
-  "title": "Cms Theme",
+  "title": "Sokeio Theme",
   "description": "",
   "keywords": [],
   "priority": 200,
   "aliases": {},
-  "namespace": "Sokeio\\ThemeCms",
+  "namespace": "Sokeio\\ThemeSokeio",
   "locations": [
     "menu_main",
     "menu_sidebar",

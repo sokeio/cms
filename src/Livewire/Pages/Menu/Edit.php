@@ -1,9 +1,9 @@
 <?php
 
-namespace Sokeio\Cms\Livewire\Pages\Menu;
+namespace Sokeio\Sokeio\Livewire\Pages\Menu;
 
-use Sokeio\Cms\Models\Menu;
-use Sokeio\Cms\Models\MenuLocation;
+use Sokeio\Sokeio\Models\Menu;
+use Sokeio\Sokeio\Models\MenuLocation;
 use Sokeio\Component;
 use Sokeio\Facades\Theme;
 

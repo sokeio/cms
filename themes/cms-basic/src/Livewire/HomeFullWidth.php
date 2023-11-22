@@ -1,5 +1,5 @@
 <?php
-namespace Sokeio\ThemeCms\Livewire;
+namespace Sokeio\ThemeSokeio\Livewire;
 use Sokeio\Component;
 
 class HomeFullWidth extends Component {

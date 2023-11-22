@@ -15,7 +15,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Sokeio\\Cms\\CmsServiceProvider"
+        "Sokeio\\Sokeio\\SokeioServiceProvider"
       ],
       "aliases": {}
     }
@@ -26,9 +26,9 @@
       "helpers/function.php"
     ],
     "psr-4": {
-      "Sokeio\\Cms\\": "src",
-      "Sokeio\\Cms\\Database\\Factories\\": "database/factories",
-      "Sokeio\\Cms\\Database\\Seeders\\": "database/seeders"
+      "Sokeio\\Sokeio\\": "src",
+      "Sokeio\\Sokeio\\Database\\Factories\\": "database/factories",
+      "Sokeio\\Sokeio\\Database\\Seeders\\": "database/seeders"
     }
   }
 }

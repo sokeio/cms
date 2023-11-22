@@ -76,22 +76,22 @@
             <div class="row g-0">
               <div class="col-3">
                 <a class="photo" href="#">
-                  <img class="img-fluid" src="/platform/themes/Cms/img/instagram/1.jpg" alt="" />
+                  <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/1.jpg" alt="" />
                 </a>
               </div>
               <div class="col-3">
                 <a class="photo" href="#">
-                  <img class="img-fluid" src="/platform/themes/Cms/img/instagram/2.jpg" alt="" />
+                  <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/2.jpg" alt="" />
                 </a>
               </div>
               <div class="col-3">
                 <a class="photo" href="#">
-                  <img class="img-fluid" src="/platform/themes/Cms/img/instagram/3.jpg" alt="" />
+                  <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/3.jpg" alt="" />
                 </a>
               </div>
               <div class="col-3">
                 <a class="photo" href="#">
-                  <img class="img-fluid" src="/platform/themes/Cms/img/instagram/4.jpg" alt="" />
+                  <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/4.jpg" alt="" />
                 </a>
               </div>
             </div>
@@ -100,22 +100,22 @@
             <div class="row g-0">
               <div class="col-3">
                 <a class="photo" href="#">
-                  <img class="img-fluid" src="/platform/themes/Cms/img/instagram/5.jpg" alt="" />
+                  <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/5.jpg" alt="" />
                 </a>
               </div>
               <div class="col-3">
                 <a class="photo" href="#">
-                  <img class="img-fluid" src="/platform/themes/Cms/img/instagram/6.jpg" alt="" />
+                  <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/6.jpg" alt="" />
                 </a>
               </div>
               <div class="col-3">
                 <a class="photo" href="#">
-                  <img class="img-fluid" src="/platform/themes/Cms/img/instagram/7.jpg" alt="" />
+                  <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/7.jpg" alt="" />
                 </a>
               </div>
               <div class="col-3">
                 <a class="photo" href="#">
-                  <img class="img-fluid" src="/platform/themes/Cms/img/instagram/8.jpg" alt="" />
+                  <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/8.jpg" alt="" />
                 </a>
               </div>
             </div>

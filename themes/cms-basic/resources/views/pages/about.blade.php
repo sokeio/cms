@@ -24,7 +24,7 @@
                             nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae,
                             eleifend ac, enim.</p>
 
-                        <img src="/platform/themes/Cms/img/18.jpg" class="img-fluid mb-3" alt="Our team" />
+                        <img src="/platform/themes/Sokeio/img/18.jpg" class="img-fluid mb-3" alt="Our team" />
 
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
                             Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
@@ -84,22 +84,22 @@
         <div class="row g-0">
           <div class="col-3">
             <a class="photo" href="#">
-              <img class="img-fluid" src="/platform/themes/Cms/img/instagram/1.jpg" alt="" />
+              <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/1.jpg" alt="" />
             </a>
           </div>
           <div class="col-3">
             <a class="photo" href="#">
-              <img class="img-fluid" src="/platform/themes/Cms/img/instagram/2.jpg" alt="" />
+              <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/2.jpg" alt="" />
             </a>
           </div>
           <div class="col-3">
             <a class="photo" href="#">
-              <img class="img-fluid" src="/platform/themes/Cms/img/instagram/3.jpg" alt="" />
+              <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/3.jpg" alt="" />
             </a>
           </div>
           <div class="col-3">
             <a class="photo" href="#">
-              <img class="img-fluid" src="/platform/themes/Cms/img/instagram/4.jpg" alt="" />
+              <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/4.jpg" alt="" />
             </a>
           </div>
         </div>
@@ -108,22 +108,22 @@
         <div class="row g-0">
           <div class="col-3">
             <a class="photo" href="#">
-              <img class="img-fluid" src="/platform/themes/Cms/img/instagram/5.jpg" alt="" />
+              <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/5.jpg" alt="" />
             </a>
           </div>
           <div class="col-3">
             <a class="photo" href="#">
-              <img class="img-fluid" src="/platform/themes/Cms/img/instagram/6.jpg" alt="" />
+              <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/6.jpg" alt="" />
             </a>
           </div>
           <div class="col-3">
             <a class="photo" href="#">
-              <img class="img-fluid" src="/platform/themes/Cms/img/instagram/7.jpg" alt="" />
+              <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/7.jpg" alt="" />
             </a>
           </div>
           <div class="col-3">
             <a class="photo" href="#">
-              <img class="img-fluid" src="/platform/themes/Cms/img/instagram/8.jpg" alt="" />
+              <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/8.jpg" alt="" />
             </a>
           </div>
         </div>

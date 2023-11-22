@@ -1,8 +1,8 @@
 <?php
 
-namespace Sokeio\Cms\Models;
+namespace Sokeio\Sokeio\Models;
 
-use Sokeio\Cms\Traits\WithTranslation;
+use Sokeio\Sokeio\Traits\WithTranslation;
 use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model

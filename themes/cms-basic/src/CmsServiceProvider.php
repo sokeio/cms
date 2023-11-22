@@ -1,12 +1,12 @@
 <?php
 
-namespace Sokeio\ThemeCms;
+namespace Sokeio\ThemeSokeio;
 
 use Illuminate\Support\ServiceProvider;
 use Sokeio\Laravel\ServicePackage;
 use Sokeio\Traits\WithServiceProvider;
 
-class CmsServiceProvider extends ServiceProvider
+class SokeioServiceProvider extends ServiceProvider
 {
     use WithServiceProvider;
 

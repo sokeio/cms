@@ -9,15 +9,15 @@
     ],
     "extra": {
         "laravel": {
-            "providers": ["Sokeio\\ThemeCms\\CmsServiceProvider"],
+            "providers": ["Sokeio\\ThemeSokeio\\SokeioServiceProvider"],
             "aliases": {}
         }
     },
     "autoload": {
         "psr-4": {
-            "Sokeio\\ThemeCms\\": "src",
-            "Sokeio\\ThemeCms\\Database\\Factories\\": "database/factories",
-            "Sokeio\\ThemeCms\\Database\\Seeders\\": "database/seeders"
+            "Sokeio\\ThemeSokeio\\": "src",
+            "Sokeio\\ThemeSokeio\\Database\\Factories\\": "database/factories",
+            "Sokeio\\ThemeSokeio\\Database\\Seeders\\": "database/seeders"
         }
     }
 }

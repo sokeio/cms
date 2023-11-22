@@ -25,7 +25,7 @@
                     </a>
                   </header>
                   <a href="home-onecolumn.html">
-                    <img class="card-img card-img-border" src="/platform/themes/Cms/img/screenshots/onecolumn.jpg" alt="One column Bootstrap blog template" />
+                    <img class="card-img card-img-border" src="/platform/themes/Sokeio/img/screenshots/onecolumn.jpg" alt="One column Bootstrap blog template" />
                   </a>
                   <div class="card-body">
                     <p class="card-text">One column magazine/blog layout with a sidebar on the right.</p>
@@ -41,7 +41,7 @@
                     </a>
                   </header>
                   <a href="home-twocolumn.html">
-                    <img class="card-img card-img-border" src="/platform/themes/Cms/img/screenshots/twocolumn.jpg" alt="Two column Bootstrap blog template" />
+                    <img class="card-img card-img-border" src="/platform/themes/Sokeio/img/screenshots/twocolumn.jpg" alt="Two column Bootstrap blog template" />
                   </a>
                   <div class="card-body">
                     <p class="card-text">Two column magazine/blog layout with a sidebar on the right.</p>
@@ -57,7 +57,7 @@
                     </a>
                   </header>
                   <a href="home-threecolumn.html">
-                    <img class="card-img card-img-border" src="/platform/themes/Cms/img/screenshots/threecolumn.jpg" alt="Three column Bootstrap blog template" />
+                    <img class="card-img card-img-border" src="/platform/themes/Sokeio/img/screenshots/threecolumn.jpg" alt="Three column Bootstrap blog template" />
                   </a>
                   <div class="card-body">
                     <p class="card-text">Three column magazine/blog layout without sidebar.</p>
@@ -73,7 +73,7 @@
                     </a>
                   </header>
                   <a href="home-fourcolumn.html">
-                    <img class="card-img card-img-border" src="/platform/themes/Cms/img/screenshots/fourcolumn.jpg" alt="Four column Bootstrap blog template" />
+                    <img class="card-img card-img-border" src="/platform/themes/Sokeio/img/screenshots/fourcolumn.jpg" alt="Four column Bootstrap blog template" />
                   </a>
                   <div class="card-body">
                     <p class="card-text">Four column magazine/blog layout without sidebar.</p>
@@ -89,7 +89,7 @@
                     </a>
                   </header>
                   <a href="home-featured.html">
-                    <img class="card-img card-img-border" src="/platform/themes/Cms/img/screenshots/featured.jpg" alt="Bootstrap blog template with featured post" />
+                    <img class="card-img card-img-border" src="/platform/themes/Sokeio/img/screenshots/featured.jpg" alt="Bootstrap blog template with featured post" />
                   </a>
                   <div class="card-body">
                     <p class="card-text">Two column magazine/blog layout with featured posts and a sidebar.</p>
@@ -105,7 +105,7 @@
                     </a>
                   </header>
                   <a href="home-fullwidth.html">
-                    <img class="card-img card-img-border" src="/platform/themes/Cms/img/screenshots/fullwidth.jpg" alt="Full width Bootstrap blog template" />
+                    <img class="card-img card-img-border" src="/platform/themes/Sokeio/img/screenshots/fullwidth.jpg" alt="Full width Bootstrap blog template" />
                   </a>
                   <div class="card-body">
                     <p class="card-text">Full width magazine/blog layout with four columns.</p>

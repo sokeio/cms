@@ -1,9 +1,9 @@
 <?php
 
-namespace  Sokeio\Cms\Crud;
+namespace  Sokeio\Sokeio\Crud;
 
 use Sokeio\Button;
-use Sokeio\Cms\Models\Page;
+use Sokeio\Sokeio\Models\Page;
 use Sokeio\CrudManager;
 use Sokeio\Item;
 use Sokeio\ItemManager;

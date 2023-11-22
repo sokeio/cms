@@ -23,7 +23,7 @@
     
                   <div class="d-flex mb-3 p-3 bg-light">
                     <div class="text-center">
-                      <img class="me-3 rounded-circle" src="/platform/themes/Cms/img/avatars/3.png" alt="Lucy" width="100" height="100">
+                      <img class="me-3 rounded-circle" src="/platform/themes/Sokeio/img/avatars/3.png" alt="Lucy" width="100" height="100">
                       <h6 class="mt-1 mb-0 me-3">Lucy</h6>
                     </div>
                     <div class="flex-grow-1 d-block">
@@ -33,7 +33,7 @@
     
                       <div class="d-flex mt-3 p-0">
                         <div class="pe-3 text-center">
-                          <img class="me-3 rounded-circle" src="/platform/themes/Cms/img/avatars/2.png" alt="John" width="100" height="100">
+                          <img class="me-3 rounded-circle" src="/platform/themes/Sokeio/img/avatars/2.png" alt="John" width="100" height="100">
                           <h6 class="mt-1 mb-0 me-3">John</h6>
                         </div>
                         <div class="flex-grow-1">
@@ -47,7 +47,7 @@
     
                   <div class="d-flex mb-3 p-3 bg-light">
                     <div class="text-center">
-                      <img class="me-3 rounded-circle" src="/platform/themes/Cms/img/avatars/1.png" alt="Kim" width="100" height="100">
+                      <img class="me-3 rounded-circle" src="/platform/themes/Sokeio/img/avatars/1.png" alt="Kim" width="100" height="100">
                       <h6 class="mt-1 mb-0 me-3">Kim</h6>
                     </div>
                     <div class="flex-grow-1">
@@ -59,7 +59,7 @@
     
                   <div class="d-flex mb-3 p-3 bg-light">
                     <div class="text-center">
-                      <img class="me-3 rounded-circle" src="/platform/themes/Cms/img/avatars/4.png" alt="Paula" width="100" height="100">
+                      <img class="me-3 rounded-circle" src="/platform/themes/Sokeio/img/avatars/4.png" alt="Paula" width="100" height="100">
                       <h6 class="mt-1 mb-0 me-3">Paula</h6>
                     </div>
                     <div class="flex-grow-1">
@@ -115,13 +115,13 @@
     
                     <a href="post-image.html" class="d-inline-block">
                       <h4 class="h6">The blind man</h4>
-                      <img class="card-img" src="/platform/themes/Cms/img/articles/2.jpg" alt="" />
+                      <img class="card-img" src="/platform/themes/Sokeio/img/articles/2.jpg" alt="" />
                     </a>
                     <time class="timeago" datetime="2021-09-03 20:00">3 october 2021</time> in Lifestyle
     
                     <a href="post-image.html" class="d-inline-block mt-3">
                       <h4 class="h6">Crying on the news</h4>
-                      <img class="card-img" src="/platform/themes/Cms/img/articles/3.jpg" alt="" />
+                      <img class="card-img" src="/platform/themes/Sokeio/img/articles/3.jpg" alt="" />
                     </a>
                     <time class="timeago" datetime="2021-07-16 20:00">16 july 2021</time> in Work
     
@@ -166,22 +166,22 @@
             <div class="row g-0">
               <div class="col-3">
                 <a class="photo" href="#">
-                  <img class="img-fluid" src="/platform/themes/Cms/img/instagram/1.jpg" alt="" />
+                  <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/1.jpg" alt="" />
                 </a>
               </div>
               <div class="col-3">
                 <a class="photo" href="#">
-                  <img class="img-fluid" src="/platform/themes/Cms/img/instagram/2.jpg" alt="" />
+                  <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/2.jpg" alt="" />
                 </a>
               </div>
               <div class="col-3">
                 <a class="photo" href="#">
-                  <img class="img-fluid" src="/platform/themes/Cms/img/instagram/3.jpg" alt="" />
+                  <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/3.jpg" alt="" />
                 </a>
               </div>
               <div class="col-3">
                 <a class="photo" href="#">
-                  <img class="img-fluid" src="/platform/themes/Cms/img/instagram/4.jpg" alt="" />
+                  <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/4.jpg" alt="" />
                 </a>
               </div>
             </div>
@@ -190,22 +190,22 @@
             <div class="row g-0">
               <div class="col-3">
                 <a class="photo" href="#">
-                  <img class="img-fluid" src="/platform/themes/Cms/img/instagram/5.jpg" alt="" />
+                  <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/5.jpg" alt="" />
                 </a>
               </div>
               <div class="col-3">
                 <a class="photo" href="#">
-                  <img class="img-fluid" src="/platform/themes/Cms/img/instagram/6.jpg" alt="" />
+                  <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/6.jpg" alt="" />
                 </a>
               </div>
               <div class="col-3">
                 <a class="photo" href="#">
-                  <img class="img-fluid" src="/platform/themes/Cms/img/instagram/7.jpg" alt="" />
+                  <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/7.jpg" alt="" />
                 </a>
               </div>
               <div class="col-3">
                 <a class="photo" href="#">
-                  <img class="img-fluid" src="/platform/themes/Cms/img/instagram/8.jpg" alt="" />
+                  <img class="img-fluid" src="/platform/themes/Sokeio/img/instagram/8.jpg" alt="" />
                 </a>
               </div>
             </div>

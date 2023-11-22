@@ -1,5 +1,5 @@
 <?php
-namespace Sokeio\Cms\Models;
+namespace Sokeio\Sokeio\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;

@@ -1,9 +1,9 @@
 <?php
 
-use Sokeio\Cms\Crud\CatalogCrud;
-use Sokeio\Cms\Crud\PageCrud;
-use Sokeio\Cms\Crud\PostCrud;
-use Sokeio\Cms\Crud\TagCrud;
+use Sokeio\Sokeio\Crud\CatalogCrud;
+use Sokeio\Sokeio\Crud\PageCrud;
+use Sokeio\Sokeio\Crud\PostCrud;
+use Sokeio\Sokeio\Crud\TagCrud;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['as' => 'admin.'], function () {
