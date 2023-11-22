@@ -1,6 +1,6 @@
 <?php
 
-namespace Sokeio\Sokeio\Traits;
+namespace Sokeio\Blog\Traits;
 
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 

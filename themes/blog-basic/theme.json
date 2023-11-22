@@ -1,0 +1,21 @@
+{
+  "id": "theme-blog-74f266cb-f9fd-4a51-8576-97582b4779bb2391871",
+  "name": "Blog",
+  "alias": "blog",
+  "title": "Blog Basic Theme",
+  "description": "",
+  "keywords": [],
+  "priority": 200,
+  "aliases": {},
+  "namespace": "Sokeio\\BlogTheme",
+  "locations": [
+    "menu_main",
+    "menu_sidebar",
+    "footer_column1",
+    "footer_column2",
+    "footer_column3",
+    "footer_column4"
+  ],
+  "layout": "",
+  "requires": []
+}

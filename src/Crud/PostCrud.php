@@ -1,10 +1,10 @@
 <?php
 
-namespace  Sokeio\Sokeio\Crud;
+namespace  Sokeio\Blog\Crud;
 
 use Sokeio\Button;
-use Sokeio\Sokeio\Models\Catalog;
-use Sokeio\Sokeio\Models\Post;
+use Sokeio\Blog\Models\Catalog;
+use Sokeio\Blog\Models\Post;
 use Sokeio\CrudManager;
 use Sokeio\Item;
 use Sokeio\ItemManager;

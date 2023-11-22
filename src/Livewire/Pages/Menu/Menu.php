@@ -1,8 +1,8 @@
 <?php
 
-namespace Sokeio\Sokeio\Livewire\Pages\Menu;
+namespace Sokeio\Blog\Livewire\Pages\Menu;
 
-use Sokeio\Sokeio\Models\MenuLocation;
+use Sokeio\Blog\Models\MenuLocation;
 use Sokeio\Component;
 
 class Menu extends Component
