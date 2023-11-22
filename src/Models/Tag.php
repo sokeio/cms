@@ -4,7 +4,7 @@ namespace Sokeio\Blog\Models;
 
 use Sokeio\Blog\Traits\WithComments;
 use Sokeio\Blog\Traits\WithTranslation;
-use Sokeio\Traits\WithSlug;
+use Sokeio\Concerns\WithSlug;
 use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model

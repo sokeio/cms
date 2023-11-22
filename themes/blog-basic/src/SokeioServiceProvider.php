@@ -4,7 +4,7 @@ namespace Sokeio\BlogTheme;
 
 use Illuminate\Support\ServiceProvider;
 use Sokeio\Laravel\ServicePackage;
-use Sokeio\Traits\WithServiceProvider;
+use Sokeio\Concerns\WithServiceProvider;
 
 class SokeioServiceProvider extends ServiceProvider
 {

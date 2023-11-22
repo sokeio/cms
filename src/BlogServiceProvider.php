@@ -6,7 +6,7 @@ use Sokeio\Builder\Menu\MenuBuilder;
 use Sokeio\Facades\Menu;
 use Illuminate\Support\ServiceProvider;
 use Sokeio\Laravel\ServicePackage;
-use Sokeio\Traits\WithServiceProvider;
+use Sokeio\Concerns\WithServiceProvider;
 
 class BlogServiceProvider extends ServiceProvider
 {
