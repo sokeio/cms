@@ -1,5 +1,5 @@
 {
-  "name": "sokeio/cms",
+  "name": "sokeio/blog",
   "description": "",
   "authors": [
     {
@@ -9,8 +9,6 @@
   ],
   "license": "MIT",
   "require": {
-    "php": "^8.1",
-    "sokeio/sokeio": "dev-main"
   },
   "extra": {
     "laravel": {
