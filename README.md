@@ -11,7 +11,7 @@ PHP 8.2+
 You can install package via composer
 
 ```bash
-$ composer require byteplatform/cms
+$ composer require sokeio/cms
 $ php artisan migrate
 $ php artisan p:setup
 ```
@@ -42,6 +42,6 @@ SEO optimization features to improve website visibility.
 Analytics integration to gather valuable insights about website performance.
 Cms is widely used by web developers and companies to streamline the development and maintenance of websites and web applications. Its user-friendly interface, extensive feature set, and flexibility make it an ideal choice for efficiently managing content and saving time and effort throughout the development and maintenance process.
 
-For more information and documentation, please visit the https://github.com/byteplatform/cms GitHub repository.
+For more information and documentation, please visit the https://github.com/sokeio/cms GitHub repository.
 
 MIT

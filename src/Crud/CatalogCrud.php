@@ -1,12 +1,12 @@
 <?php
 
-namespace  BytePlatform\Cms\Crud;
+namespace  Sokeio\Cms\Crud;
 
-use BytePlatform\Button;
-use BytePlatform\Cms\Models\Catalog;
-use BytePlatform\CrudManager;
-use BytePlatform\Item;
-use BytePlatform\ItemManager;
+use Sokeio\Button;
+use Sokeio\Cms\Models\Catalog;
+use Sokeio\CrudManager;
+use Sokeio\Item;
+use Sokeio\ItemManager;
 
 class CatalogCrud extends CrudManager
 {
@@ -117,7 +117,7 @@ class CatalogCrud extends CrudManager
         //         ->Model($this->GetModel())->Item([
         //             Item::Add('name')->Title('Name')->Column(Item::Col12)->Type('readonly'),
         //             Item::Add('PermissionIds')->Title('Permissions')->Column(Item::Col12)->Type('toggle-multiple')->DataOption(function () {
-        //                 return \BytePlatform\Models\Permission::all()->map(function ($item) {
+        //                 return \Sokeio\Models\Permission::all()->map(function ($item) {
         //                     return [
         //                         'value' => $item->id,
         //                         'text' => $item->name

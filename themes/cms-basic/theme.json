@@ -7,7 +7,7 @@
   "keywords": [],
   "priority": 200,
   "aliases": {},
-  "namespace": "BytePlatform\\ThemeCms",
+  "namespace": "Sokeio\\ThemeCms",
   "locations": [
     "menu_main",
     "menu_sidebar",

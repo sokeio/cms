@@ -1,12 +1,12 @@
 <?php
 
-namespace BytePlatform\Cms;
+namespace Sokeio\Cms;
 
-use BytePlatform\Builder\Menu\MenuBuilder;
-use BytePlatform\Facades\Menu;
+use Sokeio\Builder\Menu\MenuBuilder;
+use Sokeio\Facades\Menu;
 use Illuminate\Support\ServiceProvider;
-use BytePlatform\Laravel\ServicePackage;
-use BytePlatform\Traits\WithServiceProvider;
+use Sokeio\Laravel\ServicePackage;
+use Sokeio\Traits\WithServiceProvider;
 
 class CmsServiceProvider extends ServiceProvider
 {

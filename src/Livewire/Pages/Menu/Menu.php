@@ -1,9 +1,9 @@
 <?php
 
-namespace BytePlatform\Cms\Livewire\Pages\Menu;
+namespace Sokeio\Cms\Livewire\Pages\Menu;
 
-use BytePlatform\Cms\Models\MenuLocation;
-use BytePlatform\Component;
+use Sokeio\Cms\Models\MenuLocation;
+use Sokeio\Component;
 
 class Menu extends Component
 {

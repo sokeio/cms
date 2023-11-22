@@ -1,10 +1,10 @@
 <?php
 
-namespace BytePlatform\ThemeCms;
+namespace Sokeio\ThemeCms;
 
 use Illuminate\Support\ServiceProvider;
-use BytePlatform\Laravel\ServicePackage;
-use BytePlatform\Traits\WithServiceProvider;
+use Sokeio\Laravel\ServicePackage;
+use Sokeio\Traits\WithServiceProvider;
 
 class CmsServiceProvider extends ServiceProvider
 {

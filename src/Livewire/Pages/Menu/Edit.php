@@ -1,11 +1,11 @@
 <?php
 
-namespace BytePlatform\Cms\Livewire\Pages\Menu;
+namespace Sokeio\Cms\Livewire\Pages\Menu;
 
-use BytePlatform\Cms\Models\Menu;
-use BytePlatform\Cms\Models\MenuLocation;
-use BytePlatform\Component;
-use BytePlatform\Facades\Theme;
+use Sokeio\Cms\Models\Menu;
+use Sokeio\Cms\Models\MenuLocation;
+use Sokeio\Component;
+use Sokeio\Facades\Theme;
 
 class Edit extends Component
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace BytePlatform\Cms\Models;
+namespace Sokeio\Cms\Models;
 
-use BytePlatform\Cms\Traits\WithComments;
-use BytePlatform\Cms\Traits\WithTranslation;
-use BytePlatform\Traits\WithSlug;
+use Sokeio\Cms\Traits\WithComments;
+use Sokeio\Cms\Traits\WithTranslation;
+use Sokeio\Traits\WithSlug;
 use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model

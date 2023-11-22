@@ -1,6 +1,6 @@
 <?php
-use BytePlatform\Facades\Shortcode;
-use BytePlatform\Item;
+use Sokeio\Facades\Shortcode;
+use Sokeio\Item;
 
 return [
     'name' => '$STUDLY_NAME$',

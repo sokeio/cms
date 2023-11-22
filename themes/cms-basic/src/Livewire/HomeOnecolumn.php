@@ -1,6 +1,6 @@
 <?php
-namespace BytePlatform\ThemeCms\Livewire;
-use BytePlatform\Component;
+namespace Sokeio\ThemeCms\Livewire;
+use Sokeio\Component;
 
 class HomeOnecolumn extends Component {
 

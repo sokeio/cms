@@ -1,9 +1,9 @@
 <?php
 
-use BytePlatform\Cms\Crud\CatalogCrud;
-use BytePlatform\Cms\Crud\PageCrud;
-use BytePlatform\Cms\Crud\PostCrud;
-use BytePlatform\Cms\Crud\TagCrud;
+use Sokeio\Cms\Crud\CatalogCrud;
+use Sokeio\Cms\Crud\PageCrud;
+use Sokeio\Cms\Crud\PostCrud;
+use Sokeio\Cms\Crud\TagCrud;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['as' => 'admin.'], function () {

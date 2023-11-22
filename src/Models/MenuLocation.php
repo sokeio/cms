@@ -1,6 +1,6 @@
 <?php
 
-namespace BytePlatform\Cms\Models;
+namespace Sokeio\Cms\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

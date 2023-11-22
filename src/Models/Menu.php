@@ -1,8 +1,8 @@
 <?php
 
-namespace BytePlatform\Cms\Models;
+namespace Sokeio\Cms\Models;
 
-use BytePlatform\Cms\Traits\WithTranslation;
+use Sokeio\Cms\Traits\WithTranslation;
 use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model

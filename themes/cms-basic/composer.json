@@ -1,5 +1,5 @@
 {
-    "name": "byteplatform/theme-cms",
+    "name": "sokeio/theme-cms",
     "description": "",
     "authors": [
         {
@@ -9,15 +9,15 @@
     ],
     "extra": {
         "laravel": {
-            "providers": ["BytePlatform\\ThemeCms\\CmsServiceProvider"],
+            "providers": ["Sokeio\\ThemeCms\\CmsServiceProvider"],
             "aliases": {}
         }
     },
     "autoload": {
         "psr-4": {
-            "BytePlatform\\ThemeCms\\": "src",
-            "BytePlatform\\ThemeCms\\Database\\Factories\\": "database/factories",
-            "BytePlatform\\ThemeCms\\Database\\Seeders\\": "database/seeders"
+            "Sokeio\\ThemeCms\\": "src",
+            "Sokeio\\ThemeCms\\Database\\Factories\\": "database/factories",
+            "Sokeio\\ThemeCms\\Database\\Seeders\\": "database/seeders"
         }
     }
 }

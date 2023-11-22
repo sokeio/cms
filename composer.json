@@ -1,5 +1,5 @@
 {
-  "name": "byteplatform/cms",
+  "name": "sokeio/cms",
   "description": "",
   "authors": [
     {
@@ -10,12 +10,12 @@
   "license": "MIT",
   "require": {
     "php": "^8.1",
-    "byteplatform/byteplatform": "dev-main"
+    "sokeio/sokeio": "dev-main"
   },
   "extra": {
     "laravel": {
       "providers": [
-        "BytePlatform\\Cms\\CmsServiceProvider"
+        "Sokeio\\Cms\\CmsServiceProvider"
       ],
       "aliases": {}
     }
@@ -26,9 +26,9 @@
       "helpers/function.php"
     ],
     "psr-4": {
-      "BytePlatform\\Cms\\": "src",
-      "BytePlatform\\Cms\\Database\\Factories\\": "database/factories",
-      "BytePlatform\\Cms\\Database\\Seeders\\": "database/seeders"
+      "Sokeio\\Cms\\": "src",
+      "Sokeio\\Cms\\Database\\Factories\\": "database/factories",
+      "Sokeio\\Cms\\Database\\Seeders\\": "database/seeders"
     }
   }
 }

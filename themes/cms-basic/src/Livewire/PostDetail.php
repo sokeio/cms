@@ -1,9 +1,9 @@
 <?php
 
-namespace BytePlatform\ThemeCms\Livewire;
+namespace Sokeio\ThemeCms\Livewire;
 
-use BytePlatform\Cms\Models\Post;
-use BytePlatform\Component;
+use Sokeio\Cms\Models\Post;
+use Sokeio\Component;
 
 class PostDetail extends Component
 {
