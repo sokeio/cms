@@ -12,7 +12,5 @@
     "sass": "^1.43.4",
     "vite": "^4.3.9"
   },
-  "dependencies": {
-    "tinymce": "^6.6.2"
-  }
+  "dependencies": {}
 }
