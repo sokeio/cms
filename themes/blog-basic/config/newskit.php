@@ -1,6 +1,6 @@
 <?php
 use Sokeio\Facades\Shortcode;
-use Sokeio\Item;
+use Sokeio\Admin\Item;
 
 return [
     'name' => '$STUDLY_NAME$',

@@ -5,7 +5,7 @@ namespace  Sokeio\Blog\Crud;
 use Sokeio\Button;
 use Sokeio\Blog\Models\Catalog;
 use Sokeio\CrudManager;
-use Sokeio\Item;
+use Sokeio\Admin\Item;
 use Sokeio\ItemManager;
 
 class CatalogCrud extends CrudManager

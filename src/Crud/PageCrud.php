@@ -5,7 +5,7 @@ namespace  Sokeio\Blog\Crud;
 use Sokeio\Button;
 use Sokeio\Blog\Models\Page;
 use Sokeio\CrudManager;
-use Sokeio\Item;
+use Sokeio\Admin\Item;
 use Sokeio\ItemManager;
 
 class PageCrud extends CrudManager

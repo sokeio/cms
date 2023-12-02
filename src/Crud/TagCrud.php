@@ -5,7 +5,7 @@ namespace  Sokeio\Blog\Crud;
 use Sokeio\Button;
 use Sokeio\Blog\Models\Tag;
 use Sokeio\CrudManager;
-use Sokeio\Item;
+use Sokeio\Admin\Item;
 use Sokeio\ItemManager;
 
 class TagCrud extends CrudManager

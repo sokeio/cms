@@ -4,7 +4,7 @@
             <div class="row g-2 align-items-center">
                 <div class="col-auto">
                     <h2 class="page-title ps-2">
-                        {{ page_title() }}
+                        {!! $page_title ?? '' !!}
                     </h2>
                 </div>
                 <div class="col-auto ms-auto d-print-none ps-4">

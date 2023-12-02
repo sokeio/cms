@@ -6,7 +6,7 @@ use Sokeio\Button;
 use Sokeio\Blog\Models\Catalog;
 use Sokeio\Blog\Models\Post;
 use Sokeio\CrudManager;
-use Sokeio\Item;
+use Sokeio\Admin\Item;
 use Sokeio\ItemManager;
 use Illuminate\Support\Facades\Log;
 

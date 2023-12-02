@@ -11,8 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //
         Schema::create('pages', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+        });
+        Schema::create('page_translations', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->bigInteger('page_id');
+            $table->string('locale', 255);
             $table->string('name', 255);
             $table->string('slug', 500);
             $table->string('description', 400)->nullable()->default('');
@@ -24,10 +30,22 @@ return new class extends Migration
             $table->datetime('published_at')->nullable();
             $table->string('lock_password')->nullable();
             $table->string('layout', 255)->nullable();
+            $table->string('app_before', 500)->nullable();
+            $table->string('app_after', 500)->nullable();
+            $table->longText('data')->nullable();
+            $table->text('js')->nullable();
+            $table->text('css')->nullable();
+            $table->text('custom_js')->nullable();
+            $table->text('custom_css')->nullable();
             $table->timestamps();
         });
         Schema::create('posts', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+        });
+        Schema::create('post_translations', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->bigInteger('post_id');
+            $table->string('locale', 255);
             $table->string('name', 255);
             $table->string('slug', 500);
             $table->string('description', 400)->nullable();
@@ -41,11 +59,20 @@ return new class extends Migration
             $table->string('format_type', 30)->nullable();
             $table->string('layout', 255)->nullable();
             $table->datetime('published_at')->nullable();
+            $table->longText('data')->nullable();
+            $table->text('js')->nullable();
+            $table->text('css')->nullable();
+            $table->text('custom_js')->nullable();
+            $table->text('custom_css')->nullable();
             $table->timestamps();
         });
 
         Schema::create('catalogs', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+        });
+        Schema::create('catalog_translations', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->bigInteger('catalog_id');
             $table->string('name', 255);
             $table->string('slug', 500);
             $table->integer('parent_id')->unsigned()->default(0);
@@ -59,6 +86,11 @@ return new class extends Migration
             $table->tinyInteger('is_featured')->default(0);
             $table->tinyInteger('is_default')->unsigned()->default(0);
             $table->string('layout', 255)->nullable();
+            $table->longText('data')->nullable();
+            $table->text('js')->nullable();
+            $table->text('css')->nullable();
+            $table->text('custom_js')->nullable();
+            $table->text('custom_css')->nullable();
             $table->timestamps();
         });
         Schema::create('tags', function (Blueprint $table) {
@@ -102,6 +134,7 @@ return new class extends Migration
             $table->string('data_id', 255)->nullable();
             $table->integer('order')->default(0);
         });
+
         Schema::create('menus_translations', function (Blueprint $table) {
             $table->string('lang_code');
             $table->integer('menus_id');
@@ -109,39 +142,8 @@ return new class extends Migration
             $table->string('menu_value', 255)->nullable();
             $table->string('link', 500)->nullable();
             $table->string('class', 500)->nullable();
-
             $table->primary(['lang_code', 'menus_id'], 'menus_translations_primary');
         });
-        Schema::create('posts_translations', function (Blueprint $table) {
-            $table->string('lang_code');
-            $table->integer('posts_id');
-            $table->string('slug', 500);
-            $table->string('name', 255)->nullable();
-            $table->string('description', 400)->nullable();
-            $table->longText('content')->nullable();
-
-            $table->primary(['lang_code', 'posts_id'], 'posts_translations_primary');
-        });
-
-        Schema::create('categories_translations', function (Blueprint $table) {
-            $table->string('lang_code');
-            $table->integer('categories_id');
-            $table->string('name', 255)->nullable();
-            $table->string('slug', 500);
-            $table->string('description', 400)->nullable();
-
-            $table->primary(['lang_code', 'categories_id'], 'categories_translations_primary');
-        });
-        Schema::create('tags_translations', function (Blueprint $table) {
-            $table->string('lang_code');
-            $table->integer('tags_id');
-            $table->string('slug', 500);
-            $table->string('name', 255)->nullable();
-            $table->string('description', 400)->nullable();
-
-            $table->primary(['lang_code', 'tags_id'], 'tags_translations_primary');
-        });
-
         Schema::create('comments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('parent_id')->unsigned()->default(0);
