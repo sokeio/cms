@@ -2,11 +2,11 @@
 
 namespace  Sokeio\Cms\Crud;
 
-use Sokeio\Button;
 use Sokeio\Cms\Models\Tag;
-use Sokeio\CrudManager;
+use Sokeio\Admin\Button;
+use Sokeio\Admin\CrudManager;
 use Sokeio\Admin\Item;
-use Sokeio\ItemManager;
+use Sokeio\Admin\ItemManager;
 
 class TagCrud extends CrudManager
 {

@@ -2,12 +2,12 @@
 
 namespace  Sokeio\Cms\Crud;
 
-use Sokeio\Button;
 use Sokeio\Cms\Models\Catalog;
 use Sokeio\Cms\Models\Post;
-use Sokeio\CrudManager;
+use Sokeio\Admin\Button;
+use Sokeio\Admin\CrudManager;
 use Sokeio\Admin\Item;
-use Sokeio\ItemManager;
+use Sokeio\Admin\ItemManager;
 use Illuminate\Support\Facades\Log;
 
 class PostCrud extends CrudManager
