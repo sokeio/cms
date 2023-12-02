@@ -1,6 +1,6 @@
 <?php
 
-namespace Sokeio\Blog;
+namespace Sokeio\Cms;
 
 use Sokeio\Builder\Menu\MenuBuilder;
 use Sokeio\Facades\Menu;
@@ -8,7 +8,7 @@ use Illuminate\Support\ServiceProvider;
 use Sokeio\Laravel\ServicePackage;
 use Sokeio\Concerns\WithServiceProvider;
 
-class BlogServiceProvider extends ServiceProvider
+class CmsServiceProvider extends ServiceProvider
 {
     use WithServiceProvider;
 

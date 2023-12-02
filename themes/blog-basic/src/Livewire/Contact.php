@@ -1,5 +1,5 @@
 <?php
-namespace Sokeio\BlogTheme\Livewire;
+namespace Sokeio\CmsTheme\Livewire;
 use Sokeio\Component;
 
 class Contact extends Component {

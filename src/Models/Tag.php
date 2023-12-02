@@ -1,9 +1,9 @@
 <?php
 
-namespace Sokeio\Blog\Models;
+namespace Sokeio\Cms\Models;
 
-use Sokeio\Blog\Traits\WithComments;
-use Sokeio\Blog\Traits\WithTranslation;
+use Sokeio\Cms\Traits\WithComments;
+use Sokeio\Cms\Traits\WithTranslation;
 use Sokeio\Concerns\WithSlug;
 use Illuminate\Database\Eloquent\Model;
 

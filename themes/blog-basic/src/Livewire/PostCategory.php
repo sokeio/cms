@@ -1,8 +1,8 @@
 <?php
 
-namespace Sokeio\BlogTheme\Livewire;
+namespace Sokeio\CmsTheme\Livewire;
 
-use Sokeio\Blog\Models\Post;
+use Sokeio\Cms\Models\Post;
 use Sokeio\Component;
 
 class PostCategory extends Component

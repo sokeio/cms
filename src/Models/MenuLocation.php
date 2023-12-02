@@ -1,6 +1,6 @@
 <?php
 
-namespace Sokeio\Blog\Models;
+namespace Sokeio\Cms\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

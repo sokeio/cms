@@ -1,7 +1,7 @@
 # SokeioCms is Content Management System Kit
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/sokeio/blog.svg?style=flat-square)](https://packagist.org/packages/sokeio/blog)
-[![Total Downloads](https://img.shields.io/packagist/dt/sokeio/blog.svg?style=flat-square)](https://packagist.org/packages/sokeio/blog)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/sokeio/cms.svg?style=flat-square)](https://packagist.org/packages/sokeio/cms)
+[![Total Downloads](https://img.shields.io/packagist/dt/sokeio/cms.svg?style=flat-square)](https://packagist.org/packages/sokeio/cms)
 
 SokeioCms is a powerful and flexible Content Management System (CMS) package that provides developers with a comprehensive set of tools and functionalities to easily build and manage websites and web applications. It offers a user-friendly interface, empowering users to create, edit, and delete content effortlessly.
 

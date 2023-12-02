@@ -2826,10 +2826,10 @@
                 <i class="align-middle me-2 fab fa-fw fa-blackberry"></i> <span class="align-middle">blackberry</span>
               </div>
               <div class="mb-2">
-                <i class="align-middle me-2 fab fa-fw fa-blogger"></i> <span class="align-middle">blogger</span>
+                <i class="align-middle me-2 fab fa-fw fa-cmsger"></i> <span class="align-middle">cmsger</span>
               </div>
               <div class="mb-2">
-                <i class="align-middle me-2 fab fa-fw fa-blogger-b"></i> <span class="align-middle">blogger-b</span>
+                <i class="align-middle me-2 fab fa-fw fa-cmsger-b"></i> <span class="align-middle">cmsger-b</span>
               </div>
               <div class="mb-2">
                 <i class="align-middle me-2 fab fa-fw fa-bluetooth"></i> <span class="align-middle">bluetooth</span>

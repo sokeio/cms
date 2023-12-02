@@ -1,12 +1,12 @@
 {
-  "id": "module-blog-kit-523db231-abaf-477d-99c8-d06e5d2c10ea1892260",
-  "name": "Blog",
-  "alias": "blog",
-  "title":"Blog Platform",
-  "description": "<b>blog Platform</b> is a powerful and flexible Content Management System (CMS) package that provides developers with a comprehensive set of tools and functionalities to easily build and manage websites and web applications.",
+  "id": "module-cms-kit-523db231-abaf-477d-99c8-d06e5d2c10ea1892260",
+  "name": "Cms",
+  "alias": "cms",
+  "title":"Cms Platform",
+  "description": "<b>cms Platform</b> is a powerful and flexible Content Management System (CMS) package that provides developers with a comprehensive set of tools and functionalities to easily build and manage websites and web applications.",
   "keywords": [],
   "priority": 200,
   "aliases": {},
-  "namespace": "Sokeio\\Blog",
+  "namespace": "Sokeio\\Cms",
   "requires": []
 }

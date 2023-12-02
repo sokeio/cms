@@ -1,9 +1,9 @@
 <?php
 
-namespace  Sokeio\Blog\Crud;
+namespace  Sokeio\Cms\Crud;
 
 use Sokeio\Button;
-use Sokeio\Blog\Models\Tag;
+use Sokeio\Cms\Models\Tag;
 use Sokeio\CrudManager;
 use Sokeio\Admin\Item;
 use Sokeio\ItemManager;

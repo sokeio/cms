@@ -1,13 +1,13 @@
 {
-  "id": "theme-blog-74f266cb-f9fd-4a51-8576-97582b4779bb2391871",
-  "name": "Blog",
-  "alias": "blog",
-  "title": "Blog Basic Theme",
+  "id": "theme-cms-74f266cb-f9fd-4a51-8576-97582b4779bb2391871",
+  "name": "Cms",
+  "alias": "cms",
+  "title": "Cms Basic Theme",
   "description": "",
   "keywords": [],
   "priority": 200,
   "aliases": {},
-  "namespace": "Sokeio\\BlogTheme",
+  "namespace": "Sokeio\\CmsTheme",
   "locations": [
     "menu_main",
     "menu_sidebar",

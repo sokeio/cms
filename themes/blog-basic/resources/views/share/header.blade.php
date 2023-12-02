@@ -53,7 +53,7 @@
               <a class="nav-link" href="{{ route('about') }}" wire:navigate>About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('post-category') }}" wire:navigate>Blogs</a>
+              <a class="nav-link" href="{{ route('post-category') }}" wire:navigate>Cmss</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ route('contact') }}" wire:navigate>Contact</a>
