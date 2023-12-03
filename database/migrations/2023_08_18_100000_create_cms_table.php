@@ -162,9 +162,9 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('comments');
-        Schema::dropIfExists('tags_translations');
-        Schema::dropIfExists('categories_translations');
-        Schema::dropIfExists('posts_translations');
+        Schema::dropIfExists('tag_translations');
+        Schema::dropIfExists('catalog_translations');
+        Schema::dropIfExists('post_translations');
         Schema::dropIfExists('menus_translations');
         Schema::dropIfExists('menu_locations');
         Schema::dropIfExists('menus');

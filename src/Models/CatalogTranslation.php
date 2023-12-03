@@ -2,15 +2,18 @@
 
 namespace Sokeio\Cms\Models;
 
-use Sokeio\Cms\Traits\WithComments;
+use Sokeio\Concerns\WithSlug;
 use Sokeio\Model;
-use Sokeio\Concerns\WithModelTranslatable;
 
-class Catalog extends Model
+class CatalogTranslation extends Model
 {
-    use WithModelTranslatable, WithComments;
-
-    public $translatedAttributes = [
+    use WithSlug;
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var string[]
+     */
+    protected $fillable =  [
         'catalog_id',
         'name',
         'slug',
@@ -29,7 +32,7 @@ class Catalog extends Model
         'css',
         'custom_js',
         'custom_css',
-        'updated_at', 
+        'updated_at',
         'created_at'
     ];
 }

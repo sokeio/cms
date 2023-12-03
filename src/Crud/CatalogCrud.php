@@ -17,48 +17,73 @@ class CatalogCrud extends CrudManager
     public function GetFields()
     {
         return [
-            Item::Add('id')->Title('ID')->DisableFilter()->DisableSort()->When(function ($item, $manager) {
-                return $manager->IsTable();
-            })->DisableEdit(),
-            Item::Add('name')->Column(Item::Col12)->Title('Name')->Required(),
-            Item::Add('slug')->Title('Slug')->When(function ($item, $manager) {
-                return $manager->IsTable();
-            })->DisableEdit(),
-            Item::Add('description')->Title('description')->Type('textarea')->Column(Item::Col12)->Required()->When(function ($item, $manager) {
-                return !$manager->IsTable();
-            }),
-            Item::Add('status')->Title('status')->DataOptionStatus()->DataText(function (Item $item) {
-                $button = $item->ConvertToButton()
-                    ->Title(function ($button) {
-                        $item = $button->getData();
-                        return $item->status ? 'Active' : 'Block';
-                    })->ButtonType(function ($button) {
-                        $item = $button->getData();
-                        return $item->status ? 'success' : 'danger';
-                    });
-                if ($button->getWhen()) {
-                    $button->WireClick(function ($button) {
-                        $item = $button->getData();
-                        return "callDoAction('changeStatus',{'id':" . $item->id . ",'status':" . ($item->status == 1 ? 0 : 1) . "})";
-                    });
-                }
-                return $button->render();
-            })->DisableEdit(function ($item, $manager) {
-                return !$manager->IsTable();
-            }),
+            Item::Add('id')
+                ->Title('ID')
+                ->DisableFilter()
+                ->DisableSort()
+                ->When(function ($item, $manager) {
+                    return $manager->IsTable();
+                })
+                ->DisableEdit(),
+            Item::Add('name')
+                ->Column(Item::Col12)
+                ->Title('Name')->Required(),
+            Item::Add('slug')
+                ->Title('Slug')
+                ->When(function ($item, $manager) {
+                    return $manager->IsTable();
+                })->DisableEdit(),
+            Item::Add('description')
+                ->Title('Description')
+                ->Type('textarea')
+                ->Column(Item::Col12)
+                ->When(function ($item, $manager) {
+                    return !$manager->IsTable();
+                }),
+            Item::Add('status')
+                ->Title('Status')
+                ->DataOptionStatus()
+                ->DataText(function (Item $item) {
+                    $button = $item->ConvertToButton()
+                        ->Title(function ($button) {
+                            $item = $button->getData();
+                            return $item->status ? 'Active' : 'Block';
+                        })->ButtonType(function ($button) {
+                            $item = $button->getData();
+                            return $item->status ? 'success' : 'danger';
+                        });
+                    if ($button->getWhen()) {
+                        $button->WireClick(function ($button) {
+                            $item = $button->getData();
+                            return "callDoAction('changeStatus',{'id':" . $item->id . ",'status':" . ($item->status == 1 ? 0 : 1) . "})";
+                        });
+                    }
+                    return $button->render();
+                })
+                ->DisableEdit(function ($item, $manager) {
+                    return !$manager->IsTable();
+                })->ValueDefault(function ($item, $manager) {
+                    if (!$manager->IsTable()) {
+                        return 1;
+                    }
+                    return null;
+                }),
         ];
     }
 
     public function TablePage()
     {
         return ItemManager::Table()
+            ->Item($this->GetFields())
             ->Model($this->GetModel())
+            ->BeforeQuery(function($query){
+                $query->with('translations');
+            })
             // ->EditInTable()
             ->Title('Catalog Manager')
             ->Filter()
             ->Sort()
             ->CheckBoxRow()
-
             ->ButtonOnPage(function () {
                 return [
                     Button::Create("Create Catalog")->ButtonType(function () {
@@ -83,7 +108,6 @@ class CatalogCrud extends CrudManager
                     }),
                 ];
             })
-            ->Item($this->GetFields())
             ->Action('changeStatus', function ($params, $compoent) {
                 ['id' => $id, 'status' => $status] = $params;
                 ($this->GetModel())::where('id', $id)->update(['status' => $status]);
@@ -96,7 +120,11 @@ class CatalogCrud extends CrudManager
     public function FormPage()
     {
         return ItemManager::Form()
+            ->Item($this->GetFields())
             ->Model($this->GetModel())
+            ->BeforeQuery(function($query){
+                $query->with('translations');
+            })
             ->BeforeSave(function ($model) {
                 $model->author_id = auth()->user()->id;
                 return $model;
@@ -107,8 +135,7 @@ class CatalogCrud extends CrudManager
                     return 'Update Catalog success';
                 }
                 return 'Create Catalog success';
-            })
-            ->Item($this->GetFields());
+            });
     }
     public function SetupFormCustom()
     {
