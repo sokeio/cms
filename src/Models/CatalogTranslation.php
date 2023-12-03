@@ -15,6 +15,7 @@ class CatalogTranslation extends Model
      */
     protected $fillable =  [
         'catalog_id',
+        'locale',
         'name',
         'slug',
         'description',

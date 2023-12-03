@@ -73,6 +73,7 @@ return new class extends Migration
         Schema::create('catalog_translations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('catalog_id');
+            $table->string('locale', 255);
             $table->string('name', 255);
             $table->string('slug', 500);
             $table->integer('parent_id')->unsigned()->default(0);

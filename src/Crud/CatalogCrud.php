@@ -76,9 +76,6 @@ class CatalogCrud extends CrudManager
         return ItemManager::Table()
             ->Item($this->GetFields())
             ->Model($this->GetModel())
-            ->BeforeQuery(function($query){
-                $query->with('translations');
-            })
             // ->EditInTable()
             ->Title('Catalog Manager')
             ->Filter()
@@ -122,9 +119,6 @@ class CatalogCrud extends CrudManager
         return ItemManager::Form()
             ->Item($this->GetFields())
             ->Model($this->GetModel())
-            ->BeforeQuery(function($query){
-                $query->with('translations');
-            })
             ->BeforeSave(function ($model) {
                 $model->author_id = auth()->user()->id;
                 return $model;
