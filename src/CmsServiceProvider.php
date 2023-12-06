@@ -17,6 +17,7 @@ class CmsServiceProvider extends ServiceProvider
         add_filter(SOKEIO_URL_ADMIN, function ($prev) {
             return $prev ? $prev : "admincp";
         });
+        $this->app->register(ShortcodesServiceProvider::class);
         /*
          * This class is a Package Service Provider
          *

@@ -27,18 +27,24 @@ class CatalogCrud extends CrudManager
                 ->DisableEdit(),
             Item::Add('name')
                 ->Column(Item::Col12)
-                ->Title('Name')->Required(),
+                ->Title('Name')->Required()->ValueDefault(function(){
+                    return '';
+                }),
             Item::Add('slug')
                 ->Title('Slug')
                 ->When(function ($item, $manager) {
                     return $manager->IsTable();
-                })->DisableEdit(),
+                })->DisableEdit()->ValueDefault(function(){
+                    return '';
+                }),
             Item::Add('description')
                 ->Title('Description')
                 ->Type('textarea')
                 ->Column(Item::Col12)
                 ->When(function ($item, $manager) {
                     return !$manager->IsTable();
+                })->ValueDefault(function(){
+                    return '';
                 }),
             Item::Add('status')
                 ->Title('Status')
