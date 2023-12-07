@@ -3,7 +3,7 @@
 namespace Sokeio\Cms\Livewire;
 
 use Sokeio\Component;
-use Sokeio\Facades\Shortcode as FacadesShortcode;
+use Sokeio\Cms\Facades\Shortcode as FacadesShortcode;
 use Livewire\Attributes\Reactive;
 
 class Shortcode extends Component
@@ -30,7 +30,7 @@ class Shortcode extends Component
     }
     public function render()
     {
-        return view('cms::shortcode', add_filter(PLATFORM_SHORTCODE_MANAGER,[
+        return view('cms::shortcode', add_filter(PLATFORM_SHORTCODE_MANAGER, [
             'shortcode' => $this->shortcode,
             'attrs' => $this->attrs,
             'content' => $this->content,

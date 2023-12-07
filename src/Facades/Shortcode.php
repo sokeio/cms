@@ -1,6 +1,6 @@
 <?php
 
-namespace Sokeio\Facades;
+namespace Sokeio\Cms\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static \Sokeio\Cms\Shortcode\ShortcodeItem create($name)
  * 
  *
- * @see \Sokeio\Facades\Shortcode
+ * @see \Sokeio\Cms\Facades\Shortcode
  */
 class Shortcode extends Facade
 {
