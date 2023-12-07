@@ -154,7 +154,7 @@ class ShortcodeItem extends BaseCallback
         $action =  $this->getActionData();
         if (is_string($action)) {
             if (Action::hasAction($action)) {
-                return Action::CallActionWithParams($action, [
+                return Action::ActionWithParams($action, [
                     "params" => $this->getData(),
                     'shortcode' => $this
                 ]);
