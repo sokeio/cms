@@ -27,14 +27,14 @@ class CatalogCrud extends CrudManager
                 ->DisableEdit(),
             Item::Add('name')
                 ->Column(Item::Col12)
-                ->Title('Name')->Required()->ValueDefault(function(){
+                ->Title('Name')->Required()->ValueDefault(function () {
                     return '';
                 }),
             Item::Add('slug')
                 ->Title('Slug')
                 ->When(function ($item, $manager) {
                     return $manager->IsTable();
-                })->DisableEdit()->ValueDefault(function(){
+                })->DisableEdit()->ValueDefault(function () {
                     return '';
                 }),
             Item::Add('description')
@@ -43,7 +43,7 @@ class CatalogCrud extends CrudManager
                 ->Column(Item::Col12)
                 ->When(function ($item, $manager) {
                     return !$manager->IsTable();
-                })->ValueDefault(function(){
+                })->ValueDefault(function () {
                     return '';
                 }),
             Item::Add('status')
@@ -82,6 +82,9 @@ class CatalogCrud extends CrudManager
         return ItemManager::Table()
             ->Item($this->GetFields())
             ->Model($this->GetModel())
+            ->BeforeQuery(function ($query) {
+                return $query->with('translations');
+            })
             // ->EditInTable()
             ->Title('Catalog Manager')
             ->Filter()
@@ -113,7 +116,7 @@ class CatalogCrud extends CrudManager
             })
             ->Action('changeStatus', function ($params, $compoent) {
                 ['id' => $id, 'status' => $status] = $params;
-                ($this->GetModel())::where('id', $id)->update(['status' => $status]);
+                ($this->GetModel())::where('id', $id)-with('translations')->update(['status' => $status]);
             })->Action('deleteRow', function ($params, $compoent) {
                 ['id' => $id] = $params;
                 ($this->GetModel())::where('id', $id)->delete();
