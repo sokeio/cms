@@ -82,15 +82,7 @@ class TagCrud extends CrudManager
                     }),
                 ];
             })
-            ->Item($this->GetFields())
-            ->Action('changeStatus', function ($params, $compoent) {
-                ['id' => $id, 'status' => $status] = $params;
-                ($this->GetModel())::where('id', $id)->update(['status' => $status]);
-            })->Action('deleteRow', function ($params, $compoent) {
-                ['id' => $id] = $params;
-                ($this->GetModel())::where('id', $id)->delete();
-                $compoent->showMessage("Delete record successfully.");
-            });
+            ->Item($this->GetFields());
     }
     public function FormPage()
     {

@@ -113,14 +113,6 @@ class CatalogCrud extends CrudManager
                         return "callDoAction('deleteRow',{'id':" . $item->id . "})";
                     }),
                 ];
-            })
-            ->Action('changeStatus', function ($params, $compoent) {
-                ['id' => $id, 'status' => $status] = $params;
-                ($this->GetModel())::where('id', $id)-with('translations')->update(['status' => $status]);
-            })->Action('deleteRow', function ($params, $compoent) {
-                ['id' => $id] = $params;
-                ($this->GetModel())::where('id', $id)->delete();
-                $compoent->showMessage("Delete record successfully.");
             });
     }
     public function FormPage()

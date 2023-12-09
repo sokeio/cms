@@ -2,15 +2,18 @@
 
 namespace Sokeio\Cms\Models;
 
-use Sokeio\Cms\Traits\WithComments;
-use Illuminate\Database\Eloquent\Model;
-use Sokeio\Concerns\WithModelTranslatable;
+use Sokeio\Concerns\WithSlug;
+use Sokeio\Model;
 
-class Page extends Model
+class PageTranslation extends Model
 {
-    use WithModelTranslatable, WithComments;
-
-    public $translatedAttributes = [
+    use WithSlug;
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var string[]
+     */
+    protected $fillable =  [
         'page_id',
         'locale',
         'name',
