@@ -4,7 +4,6 @@ namespace Sokeio\Cms\Models;
 
 use Sokeio\Cms\Traits\WithComments;
 use Sokeio\Cms\Traits\WithTranslation;
-use Sokeio\Concerns\WithSlug;
 use Illuminate\Database\Eloquent\Model;
 use Sokeio\Concerns\WithModelTranslatable;
 
