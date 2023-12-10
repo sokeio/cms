@@ -74,7 +74,7 @@ class PageCrud extends CrudManager
                         return 'info';
                     })->ModalUrl(function ($button) {
                         return route('admin.page-form', ['dataId' => $button->getData()->id]);
-                    })->ModalTitle('Edit Page')->ModalSize('modal-fullscreen-xl-down'),
+                    })->ModalTitle('Edit Page')->ModalSize('modal-fullscreen-xl-down modal-xl'),
                     Button::Create("Remove")->ButtonType(function () {
                         return 'warning';
                     })->ConfirmTitle("Remove Page")->Confirm("Sure you wanna delete?")->WireClick(function ($button) {
