@@ -70,9 +70,9 @@ class CmsServiceProvider extends ServiceProvider
                 <path d="M9 17l6 0"></path>
              </svg>', function (MenuBuilder $menu) {
                         $menu->setTargetId('cms_post_menu');
-                        // $menu->route(['name' => 'admin.post-list', 'params' => []], 'Posts', '', [], 'admin.post-list');
-                        // $menu->route(['name' => 'admin.catalog-list', 'params' => []], 'Catalogs', '', [], 'admin.catalog-list');
-                        // $menu->route(['name' => 'admin.tag-list', 'params' => []], 'Tags', '', [], 'admin.tag-list');
+                        $menu->route(['name' => 'admin.post', 'params' => []], 'Posts', '', [], 'admin.post');
+                        $menu->route(['name' => 'admin.catalog', 'params' => []], 'Catalogs', '', [], 'admin.catalog');
+                        $menu->route(['name' => 'admin.tag', 'params' => []], 'Tags', '', [], 'admin.tag');
                     });
                     Menu::attachMenu('system_appearance_menu', function (MenuBuilder $menu) {
                         $menu->route(['name' => 'admin.menu', 'params' => []], 'Menus', '', [], 'admin.menu');
