@@ -73,7 +73,7 @@ class PageTable extends Table
                 })->ModalTitle(__('Edit Data'))->ModalFullscreen()->When(function ($item) {
                     return $item->getEachData()->flag != '';
                 })->Small()->ButtonColor('-icon')
-            ]))->Label(__('Langues'))->NoSort()
+            ]))->Label(__('Languages'))->NoSort()
         ];
     }
 }

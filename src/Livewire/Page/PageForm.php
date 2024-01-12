@@ -58,7 +58,6 @@ class PageForm extends Form
             UI::Prex(
                 'data',
                 [
-
                     UI::Row([
                         UI::Column12([
                             UI::Text('name')->Label(__('Title'))->required()
