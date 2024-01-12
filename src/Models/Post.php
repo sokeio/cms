@@ -4,14 +4,17 @@ namespace Sokeio\Cms\Models;
 
 use Sokeio\Cms\Traits\WithComments;
 use Illuminate\Database\Eloquent\Model;
-use Sokeio\Concerns\WithModelTranslatable;
+use Sokeio\Concerns\WithSlug;
 
 class Post extends Model
 {
-    use WithModelTranslatable, WithComments;
-    public $translatedAttributes = [
-        'post_id',
-        'locale',
+    use WithSlug, WithComments;
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var string[]
+     */
+    protected $fillable = [
         'name',
         'slug',
         'description',

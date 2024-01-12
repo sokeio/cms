@@ -11,14 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
         Schema::create('pages', function (Blueprint $table) {
             $table->bigIncrements('id');
-        });
-        Schema::create('page_translations', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('page_id');
-            $table->string('locale', 255);
             $table->string('name', 255);
             $table->string('slug', 500);
             $table->string('description', 400)->nullable()->default('');
@@ -41,11 +35,6 @@ return new class extends Migration
         });
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
-        });
-        Schema::create('post_translations', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('post_id');
-            $table->string('locale', 255);
             $table->string('name', 255);
             $table->string('slug', 500);
             $table->string('description', 400)->nullable();
@@ -69,11 +58,6 @@ return new class extends Migration
 
         Schema::create('catalogs', function (Blueprint $table) {
             $table->bigIncrements('id');
-        });
-        Schema::create('catalog_translations', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('catalog_id');
-            $table->string('locale', 255);
             $table->string('name', 255);
             $table->string('slug', 500);
             $table->integer('parent_id')->unsigned()->default(0);
@@ -136,15 +120,6 @@ return new class extends Migration
             $table->integer('order')->default(0);
         });
 
-        Schema::create('menus_translations', function (Blueprint $table) {
-            $table->string('lang_code');
-            $table->integer('menus_id');
-            $table->string('name', 255)->nullable();
-            $table->string('menu_value', 255)->nullable();
-            $table->string('link', 500)->nullable();
-            $table->string('class', 500)->nullable();
-            $table->primary(['lang_code', 'menus_id'], 'menus_translations_primary');
-        });
         Schema::create('comments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('parent_id')->unsigned()->default(0);
@@ -163,10 +138,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('comments');
-        Schema::dropIfExists('tag_translations');
-        Schema::dropIfExists('catalog_translations');
-        Schema::dropIfExists('post_translations');
-        Schema::dropIfExists('menus_translations');
         Schema::dropIfExists('menu_locations');
         Schema::dropIfExists('menus');
         Schema::dropIfExists('post_categories');
