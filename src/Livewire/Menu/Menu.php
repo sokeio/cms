@@ -1,6 +1,6 @@
 <?php
 
-namespace Sokeio\Cms\Livewire\Pages\Menu;
+namespace Sokeio\Cms\Livewire\Menu;
 
 use Sokeio\Cms\Models\MenuLocation;
 use Sokeio\Component;
