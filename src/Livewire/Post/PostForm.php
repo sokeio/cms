@@ -6,9 +6,12 @@ use Sokeio\Components\Form;
 use Sokeio\Components\UI;
 use Sokeio\Breadcrumb;
 use Sokeio\Cms\Models\Post;
+use Sokeio\Components\Concerns\WithFormLang;
 
 class PostForm extends Form
 {
+    use WithFormLang;
+
     public function getTitle()
     {
         return __('Post');
