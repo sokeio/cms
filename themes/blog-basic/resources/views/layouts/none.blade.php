@@ -9,14 +9,7 @@
 
 <body class="{{ theme_class() }}" :class="themeDark && 'theme-dark'" x-data="{ themeDark: false }">
     @ThemeBody(before)
-    <div class="page">
-        <!-- Sidebar -->
-        @include('theme::share.sidebar')
-        @include('theme::share.header')
-        <div class="page-wrapper">
-            @yield('content')
-        </div>
-    </div>
+    @yield('content')
     @ThemeBody(after)
     @stack('scripts')
 </body>
