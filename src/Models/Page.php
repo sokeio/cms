@@ -37,4 +37,8 @@ class Page extends Model
         'updated_at',
         'created_at'
     ];
+
+    protected $casts = [
+        'published_at' => 'date',
+    ];
 }

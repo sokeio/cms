@@ -64,18 +64,14 @@ return new class extends Migration
             $table->string('description', 400)->nullable();
             $table->string('image', 255)->nullable();
             $table->integer('views')->unsigned()->default(0);
-            $table->string('status', 60)->default('published');
+            $table->string('status', 60)->nullable()->default('published');
             $table->integer('author_id');
             $table->string('icon', 60)->nullable();
             $table->tinyInteger('order')->default(0);
-            $table->tinyInteger('is_featured')->default(0);
-            $table->tinyInteger('is_default')->unsigned()->default(0);
+            $table->tinyInteger('is_featured')->nullable()->default(0);
+            $table->tinyInteger('is_default')->nullable()->unsigned()->default(0);
             $table->string('layout', 255)->nullable();
             $table->longText('data')->nullable();
-            $table->text('js')->nullable();
-            $table->text('css')->nullable();
-            $table->text('custom_js')->nullable();
-            $table->text('custom_css')->nullable();
             $table->timestamps();
         });
         Schema::create('tags', function (Blueprint $table) {

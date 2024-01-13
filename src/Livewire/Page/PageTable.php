@@ -9,19 +9,19 @@ use Sokeio\Models\Language;
 
 class PageTable extends Table
 {
-    public  $langs = [];
-    public function mount()
-    {
-        // parent::mount();
-        $this->langs = Language::query()->where('status', 1)->get();
-    }
+    // public  $langs = [];
+    // public function mount()
+    // {
+    //     // parent::mount();
+    //     $this->langs = Language::query()->where('status', 1)->get();
+    // }
     protected function getModel()
     {
         return Page::class;
     }
     public function getTitle()
     {
-        return __('Page Manager');
+        return __('Page');
     }
     protected function getRoute()
     {
@@ -46,34 +46,23 @@ class PageTable extends Table
             })
         ];
     }
-    public function doChangeStatus($id, $status)
-    {
-        $this->getQuery()->where('id', $id)->update(['status' => $status]);
-    }
     public function getColumns()
     {
         return [
-            UI::Text('name')->Label(__('Name')),
+            UI::Text('name')->Label(__('Title')),
             UI::Text('slug')->Label(__('Slug')),
-            UI::Button('status')->Label(__('Status'))->NoSort()->WireClick(function ($item) {
-                if ($item->getDataItem()->status) {
-                    $item->Title(__('Active'));
-                    $item->Primary();
-                } else {
-                    $item->Title(__('Block'));
-                    $item->Warning();
-                }
-                return 'doChangeStatus(' . $item->getDataItem()->id . ',' . ($item->getDataItem()->status ? 0 : 1) . ')';
-            }),
-            UI::ButtonList(UI::ForEach($this->langs, [
-                UI::Button(function ($item) {
-                    return sokeio_flags($item->getEachData()->flag, '1x1');
-                })->ModalRoute($this->getRoute() . '.edit', function ($row, $item) {
-                    return  ['dataId' => $row->id, 'lang' => $item->getEachData()->code];
-                })->ModalTitle(__('Edit Data'))->ModalFullscreen()->When(function ($item) {
-                    return $item->getEachData()->flag != '';
-                })->Small()->ButtonColor('-icon')
-            ]))->Label(__('Languages'))->NoSort()
+            UI::Text('status')->Label(__('Status'))->NoSort(),
+            UI::Text('created_at')->Label(__('Created At')),
+            UI::Text('updated_at')->Label(__('Updated At')),
+            // UI::ButtonList(UI::ForEach($this->langs, [
+            //     UI::Button(function ($item) {
+            //         return sokeio_flags($item->getEachData()->flag, '1x1');
+            //     })->ModalRoute($this->getRoute() . '.edit', function ($row, $item) {
+            //         return  ['dataId' => $row->id, 'lang' => $item->getEachData()->code];
+            //     })->ModalTitle(__('Edit Data'))->ModalFullscreen()->When(function ($item) {
+            //         return $item->getEachData()->flag != '';
+            //     })->Small()->ButtonColor('-icon')
+            // ]))->Label(__('Languages'))->NoSort()
         ];
     }
 }
