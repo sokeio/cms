@@ -36,4 +36,12 @@ class Post extends Model
         'updated_at',
         'created_at'
     ];
+    public function cacatalogs()
+    {
+        return $this->belongsToMany(Catalog::class, 'post_catalogs', 'post_id', 'catalog_id');
+    }
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'post_tags', 'post_id', 'tag_id');
+    }
 }

@@ -9,7 +9,7 @@ use Sokeio\Concerns\WithSlug;
 
 class Catalog extends Model
 {
-    use WithSlug,WithComments;
+    use WithSlug, WithComments;
 
     /**
      * The attributes that are mass assignable.
@@ -37,4 +37,8 @@ class Catalog extends Model
         'updated_at',
         'created_at'
     ];
+    public function posts()
+    {
+        return $this->belongsToMany(Post::class, 'post_catalogs', 'catalog_id', 'post_id');
+    }
 }
