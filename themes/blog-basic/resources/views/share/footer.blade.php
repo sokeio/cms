@@ -19,10 +19,10 @@
             </li>
         </ul>
         <div class="copy">
-            &copy; Milo 2022<br />
-            All rights reserved. 
+            &copy; Sokio 2024<br />
+            All rights reserved.
         </div>
-        
+
     </div>
     <div class="text-center">Page Loaded:{{ sokeio_time() }}ms</div>
 </footer>
