@@ -7,10 +7,14 @@ use Sokeio\Components\UI;
 use Sokeio\Breadcrumb;
 use Sokeio\Cms\Models\Catalog;
 use Sokeio\Cms\Models\Post;
+use Sokeio\Cms\Models\Tag;
+
+use function PHPUnit\Framework\returnSelf;
 
 class PostForm extends Form
 {
-    public $categorieids = [];
+    public $categoryIds = [];
+    public $tagIds = '';
     public function getTitle()
     {
         return __('Post');
@@ -29,10 +33,58 @@ class PostForm extends Form
     {
         return Post::class;
     }
+    protected function loadDataAfter($post)
+    {
+        $this->categoryIds = $post->catalogs()->get()->map(function ($item) {
+            return $item->id;
+        })->toArray();
+        $this->tagIds = json_encode($post->tags()->get()->map(function ($item) {
+            return [
+                'value' => $item->name,
+                'id' => $item->id
+            ];
+        })->toArray());
+    }
+    protected function saveAfter($post)
+    {
+        $tagIds = collect(json_decode($this->tagIds, true))->map(function ($item) {
+            if (isset($item['id'])) {
+                return $item['id'];
+            }
 
+            $tag = Tag::create([
+                'name' => is_string($item) ? $item : $item['value'],
+                'author_id' => auth()->user()->id
+            ]);
+            $tag->save();
+            return $tag->id;
+        });
+
+        $post->tags()->sync(
+            collect($tagIds)
+                ->filter(function ($item) {
+                    return $item > 0;
+                })
+                ->toArray()
+        );
+
+        $post->catalogs()->sync(
+            collect($this->categoryIds)
+                ->filter(function ($item) {
+                    return $item > 0;
+                })
+                ->toArray()
+        );
+    }
     protected function FooterUI()
     {
         return null;
+    }
+    public function TagSearch($keyword)
+    {
+        return Tag::where('name', 'like', '%' . $keyword . '%')->get()->map(function ($item) {
+            return ['value' => $item->name, 'id' => $item->id];
+        });
     }
     public function FormUI()
     {
@@ -64,8 +116,14 @@ class PostForm extends Form
                                 ];
                             })->ValueDefault('published'),
                             UI::Image('image')->Label(__('Image')),
-                            UI::CheckboxMutil('categorieids')->Prex('')->Label(__('Categories'))->DataSource(function () {
+                            UI::CheckboxMutil('categoryIds')->Prex('')->Label(__('Category'))->DataSource(function () {
                                 return Catalog::query()->where('status', 'published')->get();
+                            })->NoSave(),
+                            UI::Tagify('tagIds')->Prex('')->Label(__('Tags'))->FieldOption(function () {
+                                return [
+                                    'whitelistAction' => 'TagSearch',
+                                    'searchKeys' => ["name"]
+                                ];
                             })->NoSave(),
                             UI::Select('layout')->Label(__('Layout'))->DataSource(function () {
                                 return [

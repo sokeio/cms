@@ -47,15 +47,6 @@ class PostTable extends Table
             UI::Text('status')->Label(__('Status'))->NoSort(),
             UI::Text('created_at')->Label(__('Created At')),
             UI::Text('updated_at')->Label(__('Updated At')),
-            // UI::ButtonList(UI::ForEach($this->langs, [
-            //     UI::Button(function ($item) {
-            //         return sokeio_flags($item->getEachData()->flag, '1x1');
-            //     })->ModalRoute($this->getRoute() . '.edit', function ($row, $item) {
-            //         return  ['dataId' => $row->id, 'lang' => $item->getEachData()->code];
-            //     })->ModalTitle(__('Edit Data'))->ModalFullscreen()->When(function ($item) {
-            //         return $item->getEachData()->flag != '';
-            //     })->Small()->ButtonColor('-icon')
-            // ]))->Label(__('Languages'))->NoSort()
         ];
     }
 }

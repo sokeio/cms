@@ -81,9 +81,8 @@ return new class extends Migration
             $table->string('image', 255)->nullable();
             $table->integer('views')->unsigned()->default(0);
             $table->integer('author_id');
-            $table->string('author_type', 255)->default(addslashes(User::class));
             $table->string('description', 400)->nullable()->default('');
-            $table->string('status', 60)->default('published');
+            $table->string('status', 60)->nullable()->default('published');
             $table->timestamps();
         });
         Schema::create('post_tags', function (Blueprint $table) {

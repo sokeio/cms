@@ -37,42 +37,45 @@ class CatalogForm extends Form
                 [
                     UI::Hidden('author_id')->ValueDefault(auth()->user()->id),
                     UI::Row([
-                        UI::Column6([
+                        UI::Column12([
                             UI::Text('name')->Label(__('Title'))->required(),
                             UI::Text('slug')->Label(__('Slug')),
                             UI::Image('image')->Label(__('Image')),
-                        ]),
-                        UI::Column6([
-                            UI::Select('status')->Label(__('Status'))->DataSource(function () {
-                                return [
-                                    [
-                                        'id' => 'draft',
-                                        'name' => __('Draft')
-                                    ],
-                                    [
-                                        'id' => 'published',
-                                        'name' => __('Published')
-                                    ]
-                                ];
-                            })->ValueDefault('published'),
-                            UI::Select('layout')->Label(__('Layout'))->DataSource(function () {
-                                return [
-                                    [
-                                        'id' => 'default',
-                                        'name' => __('Default')
-                                    ],
-                                    [
-                                        'id' => 'none',
-                                        'name' => __('None')
-                                    ],
-                                ];
-                            }),
+                            UI::Row([
+                                UI::Column6([
+                                    UI::Select('status')->Label(__('Status'))->DataSource(function () {
+                                        return [
+                                            [
+                                                'id' => 'draft',
+                                                'name' => __('Draft')
+                                            ],
+                                            [
+                                                'id' => 'published',
+                                                'name' => __('Published')
+                                            ]
+                                        ];
+                                    })->ValueDefault('published'),
+                                ]),
+                                UI::Column6([
+                                    UI::Select('layout')->Label(__('Layout'))->DataSource(function () {
+                                        return [
+                                            [
+                                                'id' => 'default',
+                                                'name' => __('Default')
+                                            ],
+                                            [
+                                                'id' => 'none',
+                                                'name' => __('None')
+                                            ],
+                                        ];
+                                    }),
+                                ])
+                            ]),
+
                             UI::Row([
                                 UI::Column6(UI::Checkbox('is_featured')->Label(__('Featured'))->ValueDefault(0)),
                                 UI::Column6(UI::Checkbox('is_default')->Label(__('Default'))->ValueDefault(0))
                             ]),
-                        ]),
-                        UI::Column12([
                             UI::Textarea('description')->Label(__('Description')),
                         ])
                     ]),

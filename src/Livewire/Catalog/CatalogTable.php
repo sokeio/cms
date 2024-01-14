@@ -20,25 +20,6 @@ class CatalogTable extends Table
     {
         return 'admin.catalog';
     }
-    // protected function getButtons()
-    // {
-    //     return [
-    //         UI::ButtonCreate(__('Create'))->ModalRoute($this->getRoute() . '.add')->ModalTitle(__('Create Data'))->ModalFullscreen(),
-    //     ];
-    // }
-    // protected function getTableActions()
-    // {
-    //     return [
-    //         UI::ButtonEdit(__('Edit'))->ModalRoute($this->getRoute() . '.edit', function ($row) {
-    //             return [
-    //                 'dataId' => $row->id
-    //             ];
-    //         })->ModalTitle(__('Edit Data'))->ModalFullscreen(),
-    //         UI::ButtonRemove(__('Remove'))->Confirm(__('Do you want to delete this record?'), 'Confirm')->WireClick(function ($item) {
-    //             return 'doRemove(' . $item->getDataItem()->id . ')';
-    //         })
-    //     ];
-    // }
   
     public function getColumns()
     {
