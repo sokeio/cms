@@ -6,6 +6,7 @@ use Sokeio\Cms\Models\Post;
 use Sokeio\Component;
 use Sokeio\Facades\Assets;
 use Sokeio\Facades\Theme;
+use Sokeio\Seo\Facades\SEO;
 
 class PostView extends Component
 {
@@ -15,7 +16,7 @@ class PostView extends Component
         if ($this->post->layout) {
             Theme::setLayout($this->post->layout);
         }
-        Theme::setTitle($this->post->title);
+        // SeoHelper()->for($this->post);
         if ($this->post->css)
             Assets::AddStyle($this->post->css ?? '');
         if ($this->post->custom_css)

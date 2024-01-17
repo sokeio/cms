@@ -5,10 +5,12 @@ namespace Sokeio\Cms\Models;
 use Sokeio\Cms\Traits\WithComments;
 use Illuminate\Database\Eloquent\Model;
 use Sokeio\Concerns\WithSlug;
+use Sokeio\Seo\HasSEO;
 
 class Post extends Model
 {
     use WithSlug, WithComments;
+    use HasSEO;
     /**
      * The attributes that are mass assignable.
      *

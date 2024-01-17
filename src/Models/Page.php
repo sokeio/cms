@@ -5,11 +5,16 @@ namespace Sokeio\Cms\Models;
 use Sokeio\Cms\Traits\WithComments;
 use Illuminate\Database\Eloquent\Model;
 use Sokeio\Concerns\WithSlug;
+use Sokeio\Seo\HasSEO;
 
 class Page extends Model
 {
     use WithSlug, WithComments;
-
+    use HasSEO;
+    protected function getSeoCanonicalUrl()
+    {
+        return route('page.slug', ['page' => $this->slug]);
+    }
     /**
      * The attributes that are mass assignable.
      *
