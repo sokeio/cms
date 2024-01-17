@@ -29,13 +29,13 @@ class PageTable extends Table
     }
     protected function getButtons()
     {
-        return [
+        return apply_filters('CMS_PAGE_BUTTONS', [
             UI::ButtonCreate(__('Create'))->ModalRoute($this->getRoute() . '.add')->ModalTitle(__('Create Data'))->ModalFullscreen(),
-        ];
+        ]);
     }
     protected function getTableActions()
     {
-        return [
+        return  apply_filters('CMS_PAGE_TABLE_ACTIONS', [
             UI::ButtonEdit(__('Edit'))->ModalRoute($this->getRoute() . '.edit', function ($row) {
                 return [
                     'dataId' => $row->id
@@ -44,13 +44,16 @@ class PageTable extends Table
             UI::ButtonRemove(__('Remove'))->Confirm(__('Do you want to delete this record?'), 'Confirm')->WireClick(function ($item) {
                 return 'doRemove(' . $item->getDataItem()->id . ')';
             })
-        ];
+        ]);
     }
     public function getColumns()
     {
         return [
-            UI::Text('name')->Label(__('Title')),
+            UI::Text('name')->Label(__('Title'))->FieldValue(function ($item) {
+                return  "<a href='" . route('page.slug', $item->slug) . "' title='{$item->name}' target='_blank'>{$item->name}</a>";
+            }),
             UI::Text('slug')->Label(__('Slug')),
+            UI::Text('layout')->Label(__('Layout'))->NoSort(),
             UI::Text('status')->Label(__('Status'))->NoSort(),
             UI::Text('created_at')->Label(__('Created At')),
             UI::Text('updated_at')->Label(__('Updated At')),
