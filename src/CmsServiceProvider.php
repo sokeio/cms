@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 use Sokeio\Cms\Shortcode\ShortcodesServiceProvider;
 use Sokeio\Admin\Facades\Menu;
 use Sokeio\Admin\Menu\MenuBuilder;
+use Sokeio\Cms\Models\Page;
+use Sokeio\Components\UI;
 use Sokeio\Laravel\ServicePackage;
 use Sokeio\Concerns\WithServiceProvider;
 use Sokeio\Facades\Platform;
@@ -56,6 +58,24 @@ class CmsServiceProvider extends ServiceProvider
 
         Platform::Ready(function () {
             if (sokeio_is_admin()) {
+                add_filter('SOKEIO_ADMIN_SETTING_OVERVIEW', function ($prev) {
+                    return [
+                        ...$prev,
+                        UI::Column6([
+                            UI::Select('PLATFORM_HOMEPAGE')->Label(__('Homepage'))->DataSource(function () {
+                                return [
+                                    [
+                                        'id' => '',
+                                        'name' => 'None'
+                                    ],
+                                    ...Page::query()->where('status', 'published')->get(['id', 'name'])
+                                ];
+                            })
+                        ])
+
+                    ];
+                });
+
                 Menu::Register(function () {
                     Menu::route(['name' => 'admin.page', 'params' => []], 'Pages', '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-pagekit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>

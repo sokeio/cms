@@ -2,12 +2,14 @@
 
 namespace Sokeio\Cms\Livewire\Post;
 
+use Sokeio\Cms\Models\Catalog;
 use Sokeio\Cms\Models\Post;
 use Sokeio\Components\Table;
 use Sokeio\Components\UI;
 
 class PostTable extends Table
 {
+
     protected function getModel()
     {
         return Post::class;
@@ -15,6 +17,19 @@ class PostTable extends Table
     public function getTitle()
     {
         return __('Post');
+    }
+    protected function searchUI()
+    {
+        return [
+            UI::Row([
+                UI::Column12([
+                    UI::Select('catalogs.id')->Label(__('Category'))->DataSource(function () {
+                        return Catalog::query()->where('status', 'published')->get(['id', 'name']);
+                    }),
+                ])
+            ])
+
+        ];
     }
     protected function getRoute()
     {
