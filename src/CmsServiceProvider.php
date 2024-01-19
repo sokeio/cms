@@ -71,8 +71,13 @@ class CmsServiceProvider extends ServiceProvider
                                     ...Page::query()->where('status', 'published')->get(['id', 'name'])
                                 ];
                             })
+                        ]),
+                        UI::Column12([
+                            UI::Text('PLATFORM_HOMEPAGE_TITLE')->Label(__('Homepage title'))
+                        ]),
+                        UI::Column12([
+                            UI::Textarea('PLATFORM_HOMEPAGE_DESCRIPTION')->Label(__('Homepage Description'))
                         ])
-
                     ];
                 });
 

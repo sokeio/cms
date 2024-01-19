@@ -22,9 +22,15 @@ class PostTable extends Table
     {
         return [
             UI::Row([
-                UI::Column12([
+                UI::Column4([
                     UI::Select('catalogs.id')->Label(__('Category'))->DataSource(function () {
-                        return Catalog::query()->where('status', 'published')->get(['id', 'name']);
+                        return [
+                            [
+                                'id' => '',
+                                'name' => __('All')
+                            ],
+                            ...Catalog::query()->where('status', 'published')->get(['id', 'name'])
+                        ];
                     }),
                 ])
             ])
@@ -54,11 +60,21 @@ class PostTable extends Table
             })
         ]);
     }
+    protected function getQuery()
+    {
+        return Post::query()->with('catalogs');
+    }
     public function getColumns()
     {
         return [
             UI::Text('name')->Label(__('Title'))->FieldValue(function ($item) {
                 return  "<a href='" . route('post.slug', $item->slug) . "' title='{$item->name}' target='_blank'>{$item->name}</a>";
+            }),
+            UI::Text('catalogs')->Label(__('Category'))->NoSort()->FieldValue(function ($item) {
+                if (!$item->catalogs || count($item->catalogs) == 0) {
+                    return __('None');
+                }
+                return $item->catalogs->pluck('name')->implode(', ');
             }),
             UI::Text('slug')->Label(__('Slug')),
             UI::Text('status')->Label(__('Status'))->NoSort(),
