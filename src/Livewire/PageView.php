@@ -24,6 +24,11 @@ class PageView extends Component
             Assets::AddScript($this->page->js ?? '');
         if ($this->page->custom_js)
             Assets::AddScript($this->page->custom_js ?? '');
+        Theme::setTitle($this->page->name);
+        if ($this->page->id == setting('PLATFORM_HOMEPAGE')) {
+            Theme::setTitle(setting('PLATFORM_HOMEPAGE_TITLE'));
+            Theme::setDescription(setting('PLATFORM_HOMEPAGE_DESCRIPTION'));
+        }
     }
     public function render()
     {

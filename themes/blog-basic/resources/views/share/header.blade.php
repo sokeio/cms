@@ -1,33 +1,86 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
+<header class="ud-header sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="index.html">
+              <span class="fw-bold text-white startup-logo">Startup Template</span>
+            </a>
+            <button class="navbar-toggler">
+              <span class="toggler-icon"> </span>
+              <span class="toggler-icon"> </span>
+              <span class="toggler-icon"> </span>
+            </button>
+
+            <div class="navbar-collapse">
+              <ul id="nav" class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  <a class="ud-menu-scroll" href="#home">Home</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="ud-menu-scroll" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                  <a class="ud-menu-scroll" href="#pricing">Pricing</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                  <a class="ud-menu-scroll" href="#team">Team</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Dropdown link
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
+                <li class="nav-item">
+                  <a class="ud-menu-scroll active" href="#contact">Contact</a>
                 </li>
-            </ul>
+                <li class="nav-item nav-item-has-children">
+                  <a href="javascript:void(0)"> Pages </a>
+                  <ul class="ud-submenu">
+                    <li class="ud-submenu-item">
+                      <a href="about.html" class="ud-submenu-link">
+                        About Page
+                      </a>
+                    </li>
+                    <li class="ud-submenu-item">
+                      <a href="pricing.html" class="ud-submenu-link">
+                        Pricing Page
+                      </a>
+                    </li>
+                    <li class="ud-submenu-item">
+                      <a href="contact.html" class="ud-submenu-link">
+                        Contact Page
+                      </a>
+                    </li>
+                    <li class="ud-submenu-item">
+                      <a href="blog.html" class="ud-submenu-link">
+                        Blog Grid Page
+                      </a>
+                    </li>
+                    <li class="ud-submenu-item">
+                      <a href="blog-details.html" class="ud-submenu-link">
+                        Blog Details Page
+                      </a>
+                    </li>
+                    <li class="ud-submenu-item">
+                      <a href="login.html" class="ud-submenu-link">
+                        Sign In Page
+                      </a>
+                    </li>
+                    <li class="ud-submenu-item">
+                      <a href="404.html" class="ud-submenu-link">404 Page</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <div class="navbar-btn d-none d-sm-inline-block">
+              <a href="login.html" class="ud-main-btn ud-login-btn">
+                Sign In
+              </a>
+              <a class="ud-main-btn ud-white-btn" href="javascript:void(0)">
+                Sign Up
+              </a>
+            </div>
+          </nav>
         </div>
+      </div>
     </div>
-</nav>
+  </header>

@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Sokeio\Cms\Shortcode\ShortcodesServiceProvider;
 use Sokeio\Admin\Facades\Menu;
 use Sokeio\Admin\Menu\MenuBuilder;
+use Sokeio\Cms\Livewire\PageView;
 use Sokeio\Cms\Models\Page;
 use Sokeio\Components\UI;
 use Sokeio\Laravel\ServicePackage;
@@ -55,8 +56,16 @@ class CmsServiceProvider extends ServiceProvider
     public function packageBooted()
     {
         $this->bootGate();
-
+        add_filter(PLATFORM_HOMEPAGE, function ($prev) {
+            if ($pageId = setting('PLATFORM_HOMEPAGE')) {
+                return ['uses' => PageView::class, 'params' => [
+                    'page' => Page::query()->where('id', $pageId)->first()
+                ]];
+            }
+            return $prev;
+        });
         Platform::Ready(function () {
+
             if (sokeio_is_admin()) {
                 add_action('THEME_ADMIN_RIGHT', function () {
                     echo '<div class="nav-item"><a class="nav-link fw-bold" target="_blank" href="' . url('/') . '">' . __('Visit Website') . '</a></div>';
