@@ -22,7 +22,7 @@
     </div>
     <div class="page-body">
         <div class="container-fluid">
-            <livewire:cms::pages.menu.edit :$locationId wire:key='menu-{{ $locationId }}' />
+            <livewire:cms::menu.edit :$locationId wire:key='menu-{{ $locationId }}' />
         </div>
     </div>
 </div>

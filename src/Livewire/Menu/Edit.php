@@ -115,7 +115,7 @@ class Edit extends Component
     }
     public function render()
     {
-        return view('cms::pages.menu.edit', [
+        return view('cms::menu.edit', [
             'locations' => Theme::getLocations()
         ]);
     }

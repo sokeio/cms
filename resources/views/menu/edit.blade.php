@@ -131,7 +131,7 @@
                         preventOnFilter: false,
                 }'
                     wire:sortable-group.item-group="0" class="menu-editor-manager">
-                    @includeIf('cms::pages.menu.menu-item', [
+                    @includeIf('cms::menu.menu-item', [
                         'menu_lists' => $menu_lists,
                         'parent_id' => 0,
                         'level' => 0,
