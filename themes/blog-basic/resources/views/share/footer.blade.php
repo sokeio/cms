@@ -1,4 +1,4 @@
-<footer class="site-footer bg-dark">
+<footer class="site-footer bg-dark text-bg-dark">
     <div class="container">
 
         <ul class="nav justify-content-center">
@@ -18,11 +18,12 @@
                 <a class="nav-link" href="page-contact.html">Contact</a>
             </li>
         </ul>
-        <div class="copy">
-            &copy; Sokio 2024<br />
-            All rights reserved.
+        <div class="row">
+            <div class="col">
+                copyright &copy; Sokio 2024.All rights reserved.
+            </div>
+            <div class="col-auto text-right text-sm">Page Loaded:{{ sokeio_time() }}ms</div>
         </div>
-
     </div>
-    <div class="text-center">Page Loaded:{{ sokeio_time() }}ms</div>
+
 </footer>
