@@ -3,6 +3,7 @@
   "name": "blog-basic-theme",
   "alias": "blog-basic-theme",
   "title": "Blog Basic Theme",
+  "parent": "tabler",
   "description": "",
   "keywords": [],
   "priority": 200,

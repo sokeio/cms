@@ -5,6 +5,7 @@ namespace Sokeio\CmsTheme;
 use Illuminate\Support\ServiceProvider;
 use Sokeio\Laravel\ServicePackage;
 use Sokeio\Concerns\WithServiceProvider;
+use Sokeio\Facades\Platform;
 
 class BlogServiceProvider extends ServiceProvider
 {
@@ -41,6 +42,11 @@ class BlogServiceProvider extends ServiceProvider
                 ];
             });
         }
+        Platform::DoReady(function(){
+
+            if (!sokeio_is_admin()) {
+            }
+        });
     }
     public function packageBooted()
     {
