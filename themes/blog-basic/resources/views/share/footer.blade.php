@@ -20,7 +20,7 @@
         </ul>
         <div class="row">
             <div class="col">
-                copyright &copy; Sokio 2024.All rights reserved.
+                Copyright &copy; <a href="https://sokeio.com">Sokeio.com</a> 2024.All rights reserved.
             </div>
             <div class="col-auto text-right text-sm">Page Loaded:{{ sokeio_time() }}ms</div>
         </div>

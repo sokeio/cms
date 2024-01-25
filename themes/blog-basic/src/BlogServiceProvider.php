@@ -42,7 +42,7 @@ class BlogServiceProvider extends ServiceProvider
                 ];
             });
         }
-        Platform::DoReady(function(){
+        Platform::DoReady(function () {
 
             if (!sokeio_is_admin()) {
             }
