@@ -17,6 +17,7 @@
         <div class="page-wrapper">
             <!-- Page body -->
             <div class="page-body">
+                {{ theme_option('HEADER_TEST') }}
                 @yield('content')
             </div>
         </div>
