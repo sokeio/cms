@@ -1,5 +1,5 @@
 <div>
-    <div x-ref="paneladmin12345678" class="p-3 position-fixed w-100 bg-blue top-0 left-0" style="z-index: 1100">
+    <div x-ref="paneladmin12345678" class="p-2 position-fixed w-100 text-bg-blue bg-blue top-0 left-0" style="z-index: 1100">
         Test
     </div>
     <div x-data="{
