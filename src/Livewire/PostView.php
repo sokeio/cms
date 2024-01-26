@@ -25,10 +25,10 @@ class PostView extends Component
             Assets::AddScript($this->page->js ?? '');
         if ($this->post->custom_js)
             Assets::AddScript($this->post->custom_js ?? '');
+            Assets::setTitle('xin cahò');
     }
     public function render()
     {
-        Theme::setTitle('xin cahò');
         return view_scope('cms::post', ['post' => $this->post]);
     }
 }

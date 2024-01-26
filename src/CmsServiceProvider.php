@@ -3,6 +3,7 @@
 namespace Sokeio\Cms;
 
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 use Sokeio\Cms\Shortcode\ShortcodesServiceProvider;
 use Sokeio\Admin\Facades\Menu;
 use Sokeio\Admin\Menu\MenuBuilder;
@@ -56,6 +57,11 @@ class CmsServiceProvider extends ServiceProvider
     public function packageBooted()
     {
         $this->bootGate();
+        add_action('PLATFORM_BODY_AFTER', function () {
+            if (!sokeio_is_admin()) {
+                echo Livewire::mount('cms::panel-admin');
+            }
+        });
         add_filter(PLATFORM_HOMEPAGE, function ($prev) {
             if ($pageId = setting('PLATFORM_HOMEPAGE')) {
                 return ['uses' => PageView::class, 'params' => [
