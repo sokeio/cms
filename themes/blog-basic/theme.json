@@ -10,8 +10,6 @@
   "aliases": {},
   "namespace": "Sokeio\\CmsTheme",
   "locations": [
-    "menu_main",
-    "menu_sidebar",
     "footer_column1",
     "footer_column2",
     "footer_column3",
