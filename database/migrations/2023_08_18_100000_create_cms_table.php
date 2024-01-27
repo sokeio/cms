@@ -96,25 +96,7 @@ return new class extends Migration
             $table->integer('category_id')->unsigned()->index();
             $table->integer('post_id')->unsigned()->index();
         });
-        Schema::create('menu_locations', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 255);
-            $table->json('localtions', 1000);
-        });
-        Schema::create('menus', function (Blueprint $table) {
-            $table->id();
-            $table->integer('parent_id')->default(0);
-            $table->integer('menu_location_id');
-            $table->string('name', 255);
-            $table->string('link', 500)->nullable();
-            $table->string('class_attr', 500)->nullable();
-            $table->string('data_component', 500)->nullable();
-            $table->longText('data_params')->nullable();
-            $table->string('type', 255)->default('custom'); //custom/Post/Page/Catalog/Shortcode
-            $table->string('data_id', 255)->nullable();
-            $table->integer('order')->default(0);
-        });
-
+    
         Schema::create('comments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('parent_id')->unsigned()->default(0);
@@ -133,8 +115,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('comments');
-        Schema::dropIfExists('menu_locations');
-        Schema::dropIfExists('menus');
         Schema::dropIfExists('post_categories');
         Schema::dropIfExists('post_tags');
         Schema::dropIfExists('tags');
