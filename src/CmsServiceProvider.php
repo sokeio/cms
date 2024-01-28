@@ -12,6 +12,7 @@ use Sokeio\Cms\Models\Page;
 use Sokeio\Components\UI;
 use Sokeio\Laravel\ServicePackage;
 use Sokeio\Concerns\WithServiceProvider;
+use Sokeio\Facades\Assets;
 use Sokeio\Facades\Platform;
 
 class CmsServiceProvider extends ServiceProvider
@@ -68,6 +69,13 @@ class CmsServiceProvider extends ServiceProvider
                     'page' => Page::query()->where('id', $pageId)->first()
                 ]];
             }
+            add_filter('SEO_DATA_DEFAULT', function ($prev) {
+                return [
+                    ...$prev,
+                    'title' => setting('PLATFORM_HOMEPAGE_TITLE'),
+                    'description' => setting('PLATFORM_HOMEPAGE_DESCRIPTION'),
+                ];
+            });
             return $prev;
         });
         Platform::Ready(function () {

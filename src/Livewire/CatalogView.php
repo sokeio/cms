@@ -10,6 +10,6 @@ class CatalogView extends Component
     public Catalog $catalog;
     public function render()
     {
-        return view_scope('cms::page', ['catalog' => $this->catalog]);
+        return view_scope('cms::catalog', ['catalog' => $this->catalog]);
     }
 }

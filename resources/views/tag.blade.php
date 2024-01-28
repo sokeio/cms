@@ -1,0 +1,3 @@
+<div>
+    {!! $tag->name !!}
+</div>
