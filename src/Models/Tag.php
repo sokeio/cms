@@ -5,10 +5,17 @@ namespace Sokeio\Cms\Models;
 use Sokeio\Cms\Traits\WithComments;
 use Sokeio\Concerns\WithSlug;
 use Illuminate\Database\Eloquent\Model;
+use Sokeio\Seo\HasSEO;
 
 class Tag extends Model
 {
     use WithSlug, WithComments;
+    use HasSEO;
+
+    public function getSeoCanonicalUrl()
+    {
+        return route('tag.slug', ['tag' => $this->slug]);
+    }
     protected $fillable = [
         'name',
         'slug',

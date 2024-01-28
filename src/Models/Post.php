@@ -11,6 +11,10 @@ class Post extends Model
 {
     use WithSlug, WithComments;
     use HasSEO;
+    public function getSeoCanonicalUrl()
+    {
+        return route('post.slug', ['post' => $this->slug]);
+    }
     /**
      * The attributes that are mass assignable.
      *

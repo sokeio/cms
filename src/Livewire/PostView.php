@@ -16,7 +16,6 @@ class PostView extends Component
         if ($this->post->layout) {
             Theme::setLayout($this->post->layout);
         }
-        // SeoHelper()->for($this->post);
         if ($this->post->css)
             Assets::AddStyle($this->post->css ?? '');
         if ($this->post->custom_css)
@@ -25,7 +24,8 @@ class PostView extends Component
             Assets::AddScript($this->page->js ?? '');
         if ($this->post->custom_js)
             Assets::AddScript($this->post->custom_js ?? '');
-            Assets::setTitle('xin cahò');
+        Assets::setTitle($this->post->name);
+        SeoHelper()->for($this->post);
     }
     public function render()
     {

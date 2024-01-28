@@ -15,7 +15,7 @@ class PageView extends Component
         if ($this->page->layout) {
             Theme::setLayout($this->page->layout);
         }
-        // SeoHelper()->for($this->page);
+        SeoHelper()->for($this->page);
         if ($this->page->css)
             Assets::AddStyle($this->page->css ?? '');
         if ($this->page->custom_css)

@@ -4,13 +4,18 @@ namespace Sokeio\Cms\Models;
 
 use Sokeio\Cms\Traits\WithComments;
 use Sokeio\Model;
-use Sokeio\Concerns\WithModelTranslatable;
 use Sokeio\Concerns\WithSlug;
+use Sokeio\Seo\HasSEO;
 
 class Catalog extends Model
 {
     use WithSlug, WithComments;
+    use HasSEO;
 
+    public function getSeoCanonicalUrl()
+    {
+        return route('catalog.slug', ['catalog' => $this->slug]);
+    }
     /**
      * The attributes that are mass assignable.
      *

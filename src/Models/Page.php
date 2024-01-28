@@ -11,7 +11,7 @@ class Page extends Model
 {
     use WithSlug, WithComments;
     use HasSEO;
-    protected function getSeoCanonicalUrl()
+    public function getSeoCanonicalUrl()
     {
         return route('page.slug', ['page' => $this->slug]);
     }
