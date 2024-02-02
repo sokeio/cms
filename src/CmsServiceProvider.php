@@ -4,6 +4,9 @@ namespace Sokeio\Cms;
 
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
+use Sokeio\Cms\Livewire\MenuItemCategory;
+use Sokeio\Cms\Livewire\MenuItemPage;
+use Sokeio\Cms\Livewire\MenuItemPost;
 use Sokeio\Cms\Shortcode\ShortcodesServiceProvider;
 use Sokeio\Facades\Menu;
 use Sokeio\Menu\MenuBuilder;
@@ -12,7 +15,7 @@ use Sokeio\Cms\Models\Page;
 use Sokeio\Components\UI;
 use Sokeio\Laravel\ServicePackage;
 use Sokeio\Concerns\WithServiceProvider;
-use Sokeio\Facades\Assets;
+use Sokeio\Facades\MenuRender;
 use Sokeio\Facades\Platform;
 
 class CmsServiceProvider extends ServiceProvider
@@ -81,6 +84,13 @@ class CmsServiceProvider extends ServiceProvider
         Platform::Ready(function () {
 
             if (sokeio_is_admin()) {
+                MenuRender::RegisterType('menu_item_page', __('Pages'), MenuItemPage::class, function () {
+                });
+                MenuRender::RegisterType('menu_item_post', __('Posts'), MenuItemPost::class, function () {
+                });
+                MenuRender::RegisterType('menu_item_category', __('Categories'), MenuItemCategory::class, function () {
+                });
+
                 add_action('THEME_ADMIN_RIGHT', function () {
                     echo '<div class="nav-item"><a class="nav-link fw-bold" target="_blank" href="' . url('/') . '">' . __('Visit Website') . '</a></div>';
                 });
