@@ -2,30 +2,15 @@
 
 namespace Sokeio\Cms\Livewire;
 
-use Sokeio\Component;
 use Sokeio\Cms\Facades\Shortcode;
+use Sokeio\Components\FormSettingCallback;
 
-class ShortcodeSetting extends Component
+class ShortcodeSetting extends FormSettingCallback
 {
-    public $shortcode = '';
-    public $callbackEvent = '';
-    public $children = "";
-    public  $form = [];
+
     public function getItemManager()
     {
-        return Shortcode::getShortCodeByKey($this->shortcode);
-    }
-    public function mount()
-    {
-        $this->shortcode = request('shortcode');
-        $this->form = request('attrs');
-        $this->children = $this->Base64Decode(request('children'));
-        $this->callbackEvent = request('callbackEvent');
-        // $this->form->FillData($this->attrs);
-    }
-    private function getValueText($field)
-    {
-        return isset($this->form[$field]) ? $this->form[$field] : '';
+        return Shortcode::getShortCodeByKey($this->dataSetting->shortcode);
     }
     private function getShortCodeHtml()
     {
@@ -63,12 +48,5 @@ class ShortcodeSetting extends Component
             'shortcodeHtml' => $shortcodeHtml,
             'wireId' => $wireId
         ];
-    }
-    public function render()
-    {
-        return view('admin::shortcode-setting', [
-            'shortcodes' => Shortcode::GetShortCodes(),
-            'shortcodeItem' => $this->getItemManager()
-        ]);
     }
 }

@@ -119,7 +119,16 @@ class CmsServiceProvider extends ServiceProvider
                         ]),
                     ];
                 });
-
+                add_filter(PLATFORM_CONFIG_JS, function ($rs) {
+                    return [
+                        ...$rs,
+                        'sokeio_shortcode_setting' => [
+                            'title' => __('Shortcode Setting'),
+                            'url' => route('admin.shortcode-setting'),
+                            'size' => 'modal-fullscreen-md-down modal-xl',
+                        ],
+                    ];
+                });
                 Menu::Register(function () {
                     if (!sokeio_is_admin()) return;
                     menu_admin()
