@@ -8,9 +8,10 @@ use Sokeio\Components\UI;
 
 class MenuItemPage extends FormMenu
 {
-   protected function getMenuType(){
-       return 'MenuItemPage';
-   }
+    public static function getMenuType()
+    {
+        return 'MenuItemPage';
+    }
     public function SearchPages($text)
     {
         $this->skipRender();

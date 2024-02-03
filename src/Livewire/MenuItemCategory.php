@@ -8,7 +8,7 @@ use Sokeio\Components\UI;
 
 class MenuItemCategory extends FormMenu
 {
-    protected function getMenuType()
+    public static function getMenuType()
     {
         return 'MenuItemCategory';
     }
