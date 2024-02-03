@@ -84,11 +84,11 @@ class CmsServiceProvider extends ServiceProvider
         Platform::Ready(function () {
 
             if (sokeio_is_admin()) {
-                MenuRender::RegisterType('menu_item_page', __('Pages'), MenuItemPage::class, function () {
+                MenuRender::RegisterType('MenuItemPage', __('Pages'), MenuItemPage::class, function () {
                 });
-                MenuRender::RegisterType('menu_item_post', __('Posts'), MenuItemPost::class, function () {
+                MenuRender::RegisterType('MenuItemPost', __('Posts'), MenuItemPost::class, function () {
                 });
-                MenuRender::RegisterType('menu_item_category', __('Categories'), MenuItemCategory::class, function () {
+                MenuRender::RegisterType('MenuItemCategory', __('Categories'), MenuItemCategory::class, function () {
                 });
 
                 add_action('THEME_ADMIN_RIGHT', function () {
