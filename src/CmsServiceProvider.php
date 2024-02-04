@@ -83,13 +83,10 @@ class CmsServiceProvider extends ServiceProvider
         });
         Platform::Ready(function () {
 
+            MenuRender::RegisterType(MenuItemPage::class);
+            MenuRender::RegisterType(MenuItemPost::class);
+            MenuRender::RegisterType(MenuItemCategory::class);
             if (sokeio_is_admin()) {
-                MenuRender::RegisterType('MenuItemPage', __('Pages'), MenuItemPage::class, function () {
-                });
-                MenuRender::RegisterType('MenuItemPost', __('Posts'), MenuItemPost::class, function () {
-                });
-                MenuRender::RegisterType('MenuItemCategory', __('Categories'), MenuItemCategory::class, function () {
-                });
 
                 add_action('THEME_ADMIN_RIGHT', function () {
                     echo '<div class="nav-item"><a class="nav-link fw-bold" target="_blank" href="' . url('/') . '">' . __('Visit Website') . '</a></div>';

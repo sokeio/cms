@@ -5,9 +5,18 @@ namespace Sokeio\Cms\Livewire;
 use Sokeio\Cms\Models\Page;
 use Sokeio\Components\FormMenu;
 use Sokeio\Components\UI;
+use Sokeio\Menu\MenuItemBuilder;
+use Sokeio\Models\Menu;
 
 class MenuItemPage extends FormMenu
 {
+    public static function RenderItem(MenuItemBuilder $item)
+    {
+    }
+    public static function getMenuName()
+    {
+        return __('Page');
+    }
     public static function getMenuType()
     {
         return 'MenuItemPage';
