@@ -62,6 +62,7 @@ class PostTable extends Table
     }
     protected function getQuery()
     {
+
         return Post::query()->with('catalogs');
     }
     public function getColumns()
@@ -76,7 +77,6 @@ class PostTable extends Table
                 }
                 return $item->catalogs->pluck('name')->implode(', ');
             }),
-            UI::Text('slug')->Label(__('Slug')),
             UI::Text('status')->Label(__('Status'))->NoSort(),
             UI::Text('created_at')->Label(__('Created At')),
             UI::Text('updated_at')->Label(__('Updated At')),

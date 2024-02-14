@@ -11,6 +11,7 @@ class MenuItemCategory extends FormMenu
 {
     public static function RenderItem(MenuItemBuilder $item)
     {
+        echo  view_scope('sokeio::menu.item.link', ['item' => $item, 'link' => Catalog::find($item->getValueContentData())?->getSeoCanonicalUrl()])->render();
     }
     public static function getMenuName()
     {

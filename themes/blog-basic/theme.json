@@ -11,9 +11,7 @@
   "namespace": "Sokeio\\CmsTheme",
   "locations": [
     "footer_column1",
-    "footer_column2",
-    "footer_column3",
-    "footer_column4"
+    "footer_column2"
   ],
   "layout": "",
   "requires": []

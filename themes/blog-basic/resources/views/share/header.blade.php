@@ -8,7 +8,7 @@
                 <div class="container-xl">
                     <div class="row flex-fill align-items-center">
                         <div class="col">
-                            {!! theme_menu('menu_main') !!}
+                            {!! theme_position('menu_main') !!}
                         </div>
                         <div class="col-2 d-none d-xxl-block">
                             <div class="my-2 my-md-0 flex-grow-1 flex-md-grow-0 order-first order-md-last">

@@ -23,8 +23,9 @@ class TagTable extends Table
     public function getColumns()
     {
         return [
-            UI::Text('name')->Label(__('Name')),
-            UI::Text('slug')->Label(__('Slug')),
+            UI::Text('name')->Label(__('Title'))->FieldValue(function ($item) {
+                return  "<a href='" . route('tag.slug', $item->slug) . "' title='{$item->name}' target='_blank'>{$item->name}</a>";
+            }),
             UI::Text('status')->Label(__('Status'))->NoSort(),
             UI::Text('created_at')->Label(__('Created At')),
             UI::Text('updated_at')->Label(__('Updated At')),

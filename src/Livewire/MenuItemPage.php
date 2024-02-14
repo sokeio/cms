@@ -6,12 +6,12 @@ use Sokeio\Cms\Models\Page;
 use Sokeio\Components\FormMenu;
 use Sokeio\Components\UI;
 use Sokeio\Menu\MenuItemBuilder;
-use Sokeio\Models\Menu;
 
 class MenuItemPage extends FormMenu
 {
     public static function RenderItem(MenuItemBuilder $item)
     {
+        echo  view_scope('sokeio::menu.item.link', ['item' => $item, 'link' => Page::find($item->getValueContentData())?->getSeoCanonicalUrl()])->render();
     }
     public static function getMenuName()
     {

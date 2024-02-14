@@ -62,7 +62,7 @@ class CmsServiceProvider extends ServiceProvider
     {
         $this->bootGate();
         add_action('PLATFORM_BODY_BEFORE', function () {
-            if (!sokeio_is_admin() && !setting('PLATFORM_HIDE_PANEL_CMS')) {
+            if (!sokeio_is_admin() && !setting('PLATFORM_HIDE_PANEL_CMS')&&Platform::CheckConnectDB()) {
                 echo Livewire::mount('cms::panel-admin');
             }
         });
