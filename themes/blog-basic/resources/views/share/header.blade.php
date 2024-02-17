@@ -7,7 +7,7 @@
             <div class="navbar">
                 <div class="container-xl">
                     <div class="row flex-fill align-items-center">
-                        <div class="col">
+                        <div class="col dropdown-hover">
                             {!! theme_position('menu_main') !!}
                         </div>
                         <div class="col-2 d-none d-xxl-block">
