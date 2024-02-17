@@ -14,6 +14,10 @@ class Option extends PlatformOperation
             UI::Row([
                 UI::Column6([
                     UI::Text('HEADER_TEST')->Label('Label')
+                ]),
+                UI::Column12([
+                    UI::Textarea('custom_css')->Label(__('Custom CSS')),
+                    UI::Textarea('custom_js')->Label(__('Custom JS')),
                 ])
             ])
         ]);

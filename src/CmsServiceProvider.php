@@ -62,7 +62,7 @@ class CmsServiceProvider extends ServiceProvider
     {
         $this->bootGate();
         add_action('PLATFORM_BODY_BEFORE', function () {
-            if (!sokeio_is_admin() && !setting('PLATFORM_HIDE_PANEL_CMS')&&Platform::CheckConnectDB()) {
+            if (!sokeio_is_admin() && !setting('PLATFORM_HIDE_PANEL_CMS') && Platform::CheckConnectDB()) {
                 echo Livewire::mount('cms::panel-admin');
             }
         });
@@ -107,6 +107,14 @@ class CmsServiceProvider extends ServiceProvider
                         ]),
                         UI::Column6([
                             UI::Checkbox('PLATFORM_HIDE_PANEL_CMS')->Label(__('CMS Site Panel'))->Title('Hide CMS Panel on Site')
+                        ]),
+                        UI::Column6([
+                            UI::Text('PLATFORM_SITE_NAME')->Label(__('Site Name'))->ValueDefault(function () {
+                                return 'Sokeio';
+                            })
+                        ]),
+                        UI::Column6([
+                            UI::Image('PLATFORM_SITE_LOGO')->Label(__('Site Logo'))
                         ]),
                         UI::Column12([
                             UI::Text('PLATFORM_HOMEPAGE_TITLE')->Label(__('Homepage title'))

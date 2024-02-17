@@ -5,6 +5,9 @@
     @ThemeHead(before)
     @ThemeHead(after)
     @stack('styles')
+    <style type="text/css">
+        {!! theme_option('custom_css') !!}
+    </style>
 </head>
 
 <body class="{{ theme_class() }}">
@@ -28,6 +31,9 @@
     @ThemeBody(after)
     @stack('scripts')
     </div>
+    <script type="text/javascript">
+        {!! theme_option('custom_js') !!}
+    </script>
 </body>
 
 </html>
