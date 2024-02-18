@@ -26,7 +26,7 @@
             </div>
         </form>
         <div class="text-center text-muted mt-3">
-            Forget it, <a href="{{ route('admin.login') }}">send me back</a> to the sign in screen.
+            Forget it, <a href="{{ route('site.login') }}">send me back</a> to the sign in screen.
         </div>
     </div>
 </div>

@@ -56,7 +56,7 @@
             </div>
         </form>
         <div class="text-center text-muted mt-3">
-            Already have account? <a href="{{ route('admin.login') }}" tabindex="-1">Sign in</a>
+            Already have account? <a href="{{ route('site.login') }}" tabindex="-1">Sign in</a>
         </div>
     </div>
 </div>
