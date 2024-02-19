@@ -14,6 +14,7 @@ class Shortcode extends BaseCallback
     }
     public static function getParamUI()
     {
+        return [];
     }
     public function renderHtml()
     {

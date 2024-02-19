@@ -4,7 +4,7 @@ namespace Sokeio\Cms\Shortcode;
 
 use Illuminate\Support\ServiceProvider;
 
-class ShortcodesServiceProvider extends ServiceProvider
+class ShortcodeserviceProvider extends ServiceProvider
 {
     /**
      * Perform post-registration booting of services.
@@ -58,7 +58,7 @@ class ShortcodesServiceProvider extends ServiceProvider
     public function registerShortcode()
     {
         $this->app->singleton('shortcode', function ($app) {
-            return new Shortcode($app['shortcode.compiler']);
+            return new ShortcodeManager();
         });
     }
 

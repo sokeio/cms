@@ -8,12 +8,29 @@ use Sokeio\Components\UI;
 
 class ShortcodeSetting extends FormSettingCallback
 {
-    public function SettingUI(){
-        return UI::Div('test');
-    }
-    public function getItemManager()
+    public function SettingUI()
     {
-        return Shortcode::getShortCodeByKey($this->dataSetting->shortcode);
+        $shortcode = Shortcode::getShortCodeByKey($this->data->shortcode);
+        $this->showMessage($this->data->shortcode);
+        return UI::Row([
+            UI::Column4([
+                UI::Select('shortcode')->Label(__('Shortcode'))->required()->DataSource(function () {
+                    return [
+                        [
+                            'id' => '',
+                            'name' => __('None')
+                        ],
+                        ...collect(Shortcode::getRegistered())->map(function ($item, $key) {
+                            return [
+                                'id' => $key,
+                                'name' => ($item)::getName()
+                            ];
+                        })->toArray()
+                    ];
+                })->WireLive(),
+                ...($shortcode) ? ($shortcode)::getParamUI() : []
+            ])
+        ]);
     }
     private function getShortCodeHtml()
     {

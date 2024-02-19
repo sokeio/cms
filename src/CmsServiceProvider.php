@@ -7,11 +7,12 @@ use Livewire\Livewire;
 use Sokeio\Cms\Livewire\MenuItemCategory;
 use Sokeio\Cms\Livewire\MenuItemPage;
 use Sokeio\Cms\Livewire\MenuItemPost;
-use Sokeio\Cms\Shortcode\ShortcodesServiceProvider;
+use Sokeio\Cms\Shortcodes\ShortcodesServerProvider;
 use Sokeio\Facades\Menu;
 use Sokeio\Menu\MenuBuilder;
 use Sokeio\Cms\Livewire\PageView;
 use Sokeio\Cms\Models\Page;
+use Sokeio\Cms\Shortcode\ShortcodeserviceProvider;
 use Sokeio\Components\UI;
 use Sokeio\Laravel\ServicePackage;
 use Sokeio\Concerns\WithServiceProvider;
@@ -27,7 +28,8 @@ class CmsServiceProvider extends ServiceProvider
         add_filter(SOKEIO_URL_ADMIN, function ($prev) {
             return $prev ? $prev : "admincp";
         });
-        $this->app->register(ShortcodesServiceProvider::class);
+        $this->app->register(ShortcodeserviceProvider::class);
+        $this->app->register(ShortcodesServerProvider::class);
         /*
          * This class is a Package Service Provider
          *

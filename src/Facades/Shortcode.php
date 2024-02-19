@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * 
  * @method static void register($shortocde)
- * @method static mix getShortCodes()
+ * @method static mix getRegistered()
  * @method static mix getShortCodeByKey($key)
  * @method static string compile(string $content)
  * @method static string compileOnly(string $content)
