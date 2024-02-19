@@ -1,21 +1,22 @@
 <?php
 
-namespace Sokeio\Cms\Shortcode;
+namespace Sokeio\Cms\Shortcodes;
 
-use Sokeio\Laravel\BaseCallback;
+use Sokeio\Cms\Shortcode\Shortcode;
 
-class Shortcode extends BaseCallback
+class PostShortcode extends Shortcode
 {
+
     public static function getName()
     {
     }
+
     public static function getKey()
     {
+        return 'POST_LIST';
     }
     public static function getParamUI()
     {
-    }
-    public function renderHtml()
-    {
+        return [];
     }
 }

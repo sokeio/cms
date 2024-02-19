@@ -4,10 +4,13 @@ namespace Sokeio\Cms\Livewire;
 
 use Sokeio\Cms\Facades\Shortcode;
 use Sokeio\Components\FormSettingCallback;
+use Sokeio\Components\UI;
 
 class ShortcodeSetting extends FormSettingCallback
 {
-
+    public function SettingUI(){
+        return UI::Div('test');
+    }
     public function getItemManager()
     {
         return Shortcode::getShortCodeByKey($this->dataSetting->shortcode);

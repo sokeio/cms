@@ -6,8 +6,7 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * 
- * @method static void register($shortcodes, $namespace, $force = false)
- * @method static void registerItem($key, $itemOrCallback, $namespace, $force = false)
+ * @method static void register($shortocde)
  * @method static mix getShortCodes()
  * @method static mix getShortCodeByKey($key)
  * @method static string compile(string $content)
@@ -15,7 +14,6 @@ use Illuminate\Support\Facades\Facade;
  * @method static string strip(string $content)
  * @method static void disable()
  * @method static void enable()
- * @method static \Sokeio\Cms\Shortcode\ShortcodeItem create($name)
  * 
  *
  * @see \Sokeio\Cms\Facades\Shortcode

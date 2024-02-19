@@ -1,0 +1,14 @@
+<?php
+
+namespace Sokeio\Cms\Shortcodes;
+
+use Illuminate\Support\ServiceProvider;
+use Sokeio\Cms\Facades\Shortcode;
+
+class ShortcodesServerProvider extends ServiceProvider
+{
+    public function boot()
+    {
+        Shortcode::register(PostShortcode::class);
+    }
+}
