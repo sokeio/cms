@@ -9,7 +9,7 @@
                     <div class="row">
                         @for ($i = 1; $i <= 4; $i++)
                             @if ($title = theme_option('footer_column_title' . $i))
-                                <div class="col-6 col-md-2 mb-2 footer-column footer-column-{{ $i }}">
+                                <div class="col-6 col-md-2 mb-2 footer-column footer-column-{{ $i }} dropdown-tree">
                                     <h5>{!! $title !!}</h5>
                                     {!! theme_position('footer_column' . $i) !!}
                                 </div>

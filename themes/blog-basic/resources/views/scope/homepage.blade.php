@@ -1,6 +1,6 @@
 @extends(theme_layout())
 @section('content')
-   
-<div>
+<div class="container">
+    Nội dung
 </div>
 @endsection
