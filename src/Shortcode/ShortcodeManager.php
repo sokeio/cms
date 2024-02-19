@@ -8,7 +8,6 @@ use Sokeio\Concerns\WithHelpers;
 
 class ShortcodeManager
 {
-    use WithShortcodeCompiler;
     protected $registered = [];
     use WithHelpers;
     public function getAllShortcodeFromText($shortcode)
