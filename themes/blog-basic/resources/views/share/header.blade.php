@@ -1,8 +1,8 @@
-<div class="sticky-top">
+<div class="sticky-top ">
     @php
         do_action('theme::share.header.before');
     @endphp
-    <header class="navbar navbar-expand-md d-print-none">
+    <header class="navbar navbar-expand-md d-print-none {!! theme_option('header_color') !!}">
         <div class="container-xl">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu"
                 aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -155,23 +155,21 @@
                             aria-label="Open user menu">
                             <span class="avatar avatar-sm" style="background-image: url(./static/avatars/000m.jpg)"></span>
                             <div class="d-none d-xl-block ps-2">
-                                <div>Paweł Kuna</div>
-                                <div class="mt-1 small text-secondary">UI Designer</div>
+                                <div>{{ auth()->user()->name }}</div>
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" data-bs-theme="light">
-                            <a href="#" class="dropdown-item">Status</a>
-                            <a href="./profile.html" class="dropdown-item">Profile</a>
-                            <a href="#" class="dropdown-item">Feedback</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="./settings.html" class="dropdown-item">Settings</a>
-                            <a href="./sign-in.html" class="dropdown-item">Logout</a>
+                            <a href="{{route('site.logout')}}" class="dropdown-item">Logout</a>
                         </div>
                     </div>
+                @else
+                    <div class="nav-link">
+                        <a href="{{ route('site.login') }}" class="btn bg-red text-red-fg">@lang('Login')</a>
+                    </div>
+                    <div class="nav-link">
+                        <a href="{{ route('site.sign-up') }}" class="btn btn-primary">@lang('Sign up')</a>
+                    </div>
                 @endauth
-                @guest
-                    <a href="{{ route('site.login') }}" class="nav-link px-0">@lang('Login')</a>
-                @endguest
             </div>
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <div

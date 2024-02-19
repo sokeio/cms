@@ -11,17 +11,15 @@
 |
 */
 
-use Illuminate\Support\Facades\Route;
 use Sokeio\Cms\Livewire\CatalogView;
 use Sokeio\Cms\Livewire\PageView;
 use Sokeio\Cms\Livewire\PostView;
 use Sokeio\Cms\Livewire\TagView;
+use Sokeio\Facades\Platform;
 
-app()->booted(function () {
-    Route::group([], function () {
-        Route::get('/p/{post}', PostView::class)->name('post.slug');
-        Route::get('/c/{catalog}', CatalogView::class)->name('catalog.slug');
-        Route::get('/t/{tag}', TagView::class)->name('tag.slug');
-        Route::get('/{page}', PageView::class)->name('page.slug');
-    });
+permalink_route('cms_post_permalink', 'post/{post}', PostView::class, 'post.slug');
+permalink_route('cms_catalog_permalink', 'catalog/{catalog}', CatalogView::class, 'catalog.slug');
+permalink_route('cms_tag_permalink', 'tag/{tag}', TagView::class, 'tag.slug');
+Platform::RouteSiteBeforeReady(function () {
+    permalink_route('cms_page_permalink', '{page}', PageView::class, 'page.slug');
 });
