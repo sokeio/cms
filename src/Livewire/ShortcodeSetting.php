@@ -35,9 +35,9 @@ class ShortcodeSetting extends FormSettingCallback
             UI::Column7([
                 UI::Div(function () {
                     return $this->getShortCodeHtml();
-                })->ClassName('p-2 border rounded bg-orange text-orange-fg'),
+                })->ClassName('p-2 border rounded bg-blue text-blue-fg'),
                 UI::Div([
-                    UI::Button('Preview')->XClick('doPreview()'),
+                    UI::Button('Preview')->XClick('doPreview()')->ClassName('mb-2'),
                     UI::Div('')->Attribute('x-html="shortcodeHtml"'),
                 ])->XData("{
                     shortcode: '',
@@ -52,7 +52,7 @@ class ShortcodeSetting extends FormSettingCallback
                         this.shortcodeHtml = rs['shortcodeHtml'];
                         this.shortcodeWireId = rs['wireId'];
                     }
-                }")->ClassName('p-2 border rounded bg-orange text-orange-fg'),
+                }")->XInit('doPreview()')->ClassName('mt-2 p-2 border rounded bg-dark-lt'),
             ])->When(function(){
                 return $this->data->shortcode != '';
             })
@@ -89,6 +89,8 @@ class ShortcodeSetting extends FormSettingCallback
     {
         $this->skipRender();
         $shortcode = $this->getShortCodeHtml();
+
+        Shortcode::enable();
         $shortcodeHtml = shortcode_render($shortcode);
         $pattern = '/wire:id="([^"]+)"/';
         $wireId = '';
