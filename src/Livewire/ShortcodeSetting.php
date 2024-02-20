@@ -11,7 +11,6 @@ class ShortcodeSetting extends FormSettingCallback
     public function SettingUI()
     {
         $shortcode = Shortcode::getShortCodeByKey($this->data->shortcode);
-        $this->showMessage($this->data->shortcode);
         return UI::Row([
             UI::Column4([
                 UI::Select('shortcode')->Label(__('Shortcode'))->required()->DataSource(function () {
@@ -28,23 +27,29 @@ class ShortcodeSetting extends FormSettingCallback
                         })->toArray()
                     ];
                 })->WireLive(),
-                ...($shortcode) ? ($shortcode)::getParamUI() : []
+                ...(($shortcode) ? ($shortcode)::getParamUI() : []),
+                UI::Tinymce('children')->Label(__('Content')),
             ])
         ]);
     }
     private function getShortCodeHtml()
     {
-        $html = '[' . $this->shortcode;
-        if ($items = $this->getItemManager()?->getItems()) {
+        $html = '[' . $this->data->shortcode;
+        if ($items = $this->getAllInputUI()) {
             foreach ($items as $item) {
-                $value = $this->getValueText($item->getField());
+                if (in_array($item->getName(), ['shortcode','children'])) continue;
+                $value = data_get($this, $item->getFormFieldEncode(), $item->getValueDefault());
                 if ($value) {
-                    $html .= ' ' . $item->getField() . '="' . $value . '"';
+                    $html .= ' ' . $item->getName() . '="' . $value . '"';
                 }
             }
         }
+        if ($this->data->children) {
+            $html .= ']' . $this->Base64Encode($this->data->children) . '[/' . $this->data->shortcode . ']';
+        } else {
 
-        $html .= ']' . $this->Base64Encode($this->children) . '[/' . $this->shortcode . ']';
+            $html .= '/]';
+        }
         return   $html;
     }
     public function getShortCodeHtml2()
@@ -68,5 +73,12 @@ class ShortcodeSetting extends FormSettingCallback
             'shortcodeHtml' => $shortcodeHtml,
             'wireId' => $wireId
         ];
+    }
+    public function doSave()
+    {
+        if ($this->doValidate())
+            $this->skipRender();
+        $this->closeComponent();
+        return $this->getShortCodeHtml();
     }
 }
