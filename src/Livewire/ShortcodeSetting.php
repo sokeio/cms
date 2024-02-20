@@ -28,8 +28,8 @@ class ShortcodeSetting extends FormSettingCallback
                     ];
                 })->WireLive(),
                 ...(($shortcode) ? ($shortcode)::getParamUI() : []),
-                UI::Tinymce('children')->Label(__('Content'))->When(function () {
-                    return $this->data->shortcode != '';
+                UI::Tinymce('children')->Label(__('Content'))->When(function () use ($shortcode) {
+                    return $this->data->shortcode != '' && ($shortcode)::EnableChildContent();
                 }),
             ]),
             UI::Column7([
@@ -53,7 +53,7 @@ class ShortcodeSetting extends FormSettingCallback
                         this.shortcodeWireId = rs['wireId'];
                     }
                 }")->XInit('doPreview()')->ClassName('mt-2 p-2 border rounded bg-dark-lt'),
-            ])->When(function(){
+            ])->When(function () {
                 return $this->data->shortcode != '';
             })
         ]);
