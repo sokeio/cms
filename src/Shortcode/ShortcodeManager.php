@@ -14,7 +14,7 @@ class ShortcodeManager
     {
         if (!$shortcode) return null;
         $pattern = '/\[([\w-:]+)((?:\s+\w+\s*=\s*"[^"]*")*)\](.*?)\[\/\1\]/s';
-
+        $pattern = '/\[([\w-:]+)((?:\s+\w+\s*=\s*"[^"]*")*)\](.*?)\[\/\1\]/s';
         // Extract all shortcode matches
         preg_match_all($pattern, $shortcode, $matches, PREG_SET_ORDER);
 
@@ -134,7 +134,14 @@ class ShortcodeManager
 
         return $result;
     }
-
+    public function compileOnly($value)
+    {
+        $flg = $this->getStatus();
+        $content = $this->compile($value);
+        if (!$flg) $this->disable();
+        // return compiled contents
+        return $content;
+    }
     /**
      * Check if laravel-shortcodes have been registered
      *
@@ -200,7 +207,6 @@ class ShortcodeManager
         // Render the shortcode through the callback
         return call_user_func_array($this->getCallback($name), [
             $compiled,
-            $compiled->getContent(),
             $this,
             $viewData
         ]);

@@ -28,8 +28,6 @@ class CmsServiceProvider extends ServiceProvider
         add_filter(SOKEIO_URL_ADMIN, function ($prev) {
             return $prev ? $prev : "admincp";
         });
-        $this->app->register(ShortcodeserviceProvider::class);
-        $this->app->register(ShortcodesServerProvider::class);
         /*
          * This class is a Package Service Provider
          *
@@ -62,6 +60,9 @@ class CmsServiceProvider extends ServiceProvider
     }
     public function packageBooted()
     {
+
+        $this->app->register(ShortcodeserviceProvider::class);
+        $this->app->register(ShortcodesServerProvider::class);
         $this->bootGate();
         add_action('PLATFORM_BODY_BEFORE', function () {
             if (!sokeio_is_admin() && !setting('PLATFORM_HIDE_PANEL_CMS') && Platform::CheckConnectDB()) {
@@ -83,6 +84,7 @@ class CmsServiceProvider extends ServiceProvider
             });
             return $prev;
         });
+        
         Platform::Ready(function () {
 
             MenuRender::RegisterType(MenuItemPage::class);

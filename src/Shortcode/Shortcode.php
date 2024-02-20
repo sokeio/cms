@@ -2,6 +2,7 @@
 
 namespace Sokeio\Cms\Shortcode;
 
+use GuzzleHttp\RetryMiddleware;
 use Sokeio\Laravel\BaseCallback;
 
 class Shortcode extends BaseCallback
@@ -16,7 +17,7 @@ class Shortcode extends BaseCallback
     {
         return [];
     }
-    public function renderHtml()
+    public function renderHtml(ShortcodeInfo $shortcode, ShortcodeManager $manager, $viewData = [])
     {
     }
 }

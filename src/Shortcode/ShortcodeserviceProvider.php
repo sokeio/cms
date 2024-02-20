@@ -22,11 +22,10 @@ class ShortcodeserviceProvider extends ServiceProvider
     public function enableCompiler()
     {
         // Check if the compiler is auto enabled
-        $state = $this->app['config']->get('sokeio::shortcodes-enabled', false);
-        
+        $state = $this->app['config']->get('cms::shortcodes-enabled', true);
         // Enable when needed
         if ($state) {
-            $this->app['shortcode.compiler']->enable();
+            $this->app['shortcode']->enable();
         }
     }
 
@@ -37,19 +36,8 @@ class ShortcodeserviceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerShortcodeCompiler();
         $this->registerShortcode();
         $this->registerView();
-    }
-
-    /**
-     * Register short code compiler.
-     */
-    public function registerShortcodeCompiler()
-    {
-        $this->app->singleton('shortcode.compiler', function ($app) {
-            return new ShortcodeManager();
-        });
     }
 
     /**
@@ -74,7 +62,7 @@ class ShortcodeserviceProvider extends ServiceProvider
             // environment. The resolver will be used by an environment to get each of
             // the various engine implementations such as plain PHP or Blade engine.
             $resolver = $app['view.engine.resolver'];
-            $env = new ShortcodeFactory($resolver, $finder, $app['events'], $app['shortcode.compiler']);
+            $env = new ShortcodeFactory($resolver, $finder, $app['events'], $app['shortcode']);
 
             // We will also set the container instance on this view environment since the
             // view composers may be classes registered in the container, which allows
@@ -95,7 +83,6 @@ class ShortcodeserviceProvider extends ServiceProvider
     {
         return [
             'shortcode',
-            'shortcode.compiler',
             'view'
         ];
     }

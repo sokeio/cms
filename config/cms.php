@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'name' => 'cms'
+    'name' => 'cms',
+    'shortcodes-enabled' => false
 ];

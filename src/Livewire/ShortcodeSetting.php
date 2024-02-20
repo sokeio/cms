@@ -12,8 +12,8 @@ class ShortcodeSetting extends FormSettingCallback
     {
         $shortcode = Shortcode::getShortCodeByKey($this->data->shortcode);
         return UI::Row([
-            UI::Column4([
-                UI::Select('shortcode')->Label(__('Shortcode'))->required()->DataSource(function () {
+            UI::Column([
+                UI::Select('shortcode')->Label(__('Shortcode'))->DataSource(function () {
                     return [
                         [
                             'id' => '',
@@ -28,16 +28,43 @@ class ShortcodeSetting extends FormSettingCallback
                     ];
                 })->WireLive(),
                 ...(($shortcode) ? ($shortcode)::getParamUI() : []),
-                UI::Tinymce('children')->Label(__('Content')),
-            ])
+                UI::Tinymce('children')->Label(__('Content'))->When(function () {
+                    return $this->data->shortcode != '';
+                }),
+            ]),
+            UI::Column7([
+                UI::Div(function () {
+                    return $this->getShortCodeHtml();
+                })->ClassName('p-2 border rounded bg-orange text-orange-fg'),
+                UI::Div([
+                    UI::Button('Preview')->XClick('doPreview()'),
+                    UI::Div('')->Attribute('x-html="shortcodeHtml"'),
+                ])->XData("{
+                    shortcode: '',
+                    shortcodeHtml: '',
+                    shortcodeWireId: '',
+                    async doPreview() {
+                        let rs = await this.\$wire.doPreview();
+                        if (this.shortcodeWireId != '') {
+                            Livewire.find(this.shortcodeWireId)?.__instance?.cleanup();
+                        }
+                        this.shortcode = rs['shortcode'];
+                        this.shortcodeHtml = rs['shortcodeHtml'];
+                        this.shortcodeWireId = rs['wireId'];
+                    }
+                }")->ClassName('p-2 border rounded bg-orange text-orange-fg'),
+            ])->When(function(){
+                return $this->data->shortcode != '';
+            })
         ]);
     }
     private function getShortCodeHtml()
     {
+        if ($this->data->shortcode == '') return '';
         $html = '[' . $this->data->shortcode;
         if ($items = $this->getAllInputUI()) {
             foreach ($items as $item) {
-                if (in_array($item->getName(), ['shortcode','children'])) continue;
+                if (in_array($item->getName(), ['shortcode', 'children'])) continue;
                 $value = data_get($this, $item->getFormFieldEncode(), $item->getValueDefault());
                 if ($value) {
                     $html .= ' ' . $item->getName() . '="' . $value . '"';
