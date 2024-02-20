@@ -19,20 +19,27 @@ class PostShortcode extends Shortcode
     {
         return 'CMS::POST_LIST';
     }
-    public static function EnableChildContent(){
+    public static function EnableChildContent()
+    {
         return false;
     }
     public static function getParamUI()
     {
         return [
             UI::Text('title')->Label(__('Title')),
-            UI::Select('catalogs.id')->Label(__('Category'))->DataSource(function () {
-                return \Sokeio\Cms\Models\Catalog::all()->map(function ($item) {
-                    return [
-                        'id' => $item->id,
-                        'name' => $item->name
-                    ];
-                });
+            UI::Select('catalogs_id')->Label(__('Category'))->DataSource(function () {
+                return [
+                    [
+                        'id' => '',
+                        'name' => __('None')
+                    ],
+                    ...\Sokeio\Cms\Models\Catalog::all()->map(function ($item) {
+                        return [
+                            'id' => $item->id,
+                            'name' => $item->name
+                        ];
+                    })
+                ];
             })
         ];
     }
