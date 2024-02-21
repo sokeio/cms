@@ -83,10 +83,10 @@ class CmsServiceProvider extends ServiceProvider
             return $prev;
         });
         
+        $this->app->register(ShortcodeserviceProvider::class);
+        $this->app->register(ShortcodesServerProvider::class);
         Platform::Ready(function () {
 
-            $this->app->register(ShortcodeserviceProvider::class);
-            $this->app->register(ShortcodesServerProvider::class);
             MenuRender::RegisterType(MenuItemPage::class);
             MenuRender::RegisterType(MenuItemPost::class);
             MenuRender::RegisterType(MenuItemCategory::class);

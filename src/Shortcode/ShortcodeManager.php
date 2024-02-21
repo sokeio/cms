@@ -4,6 +4,8 @@ namespace Sokeio\Cms\Shortcode;
 
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
+use Livewire\Component;
+use Livewire\Livewire;
 use Sokeio\Concerns\WithHelpers;
 
 class ShortcodeManager
@@ -199,17 +201,7 @@ class ShortcodeManager
      */
     public function render($matches)
     {
-        // Compile the shortcode
-        $compiled = $this->compileShortcode($matches);
-        $name = $compiled->getName();
-        $viewData = $this->_viewData;
-
-        // Render the shortcode through the callback
-        return call_user_func_array($this->getCallback($name), [
-            $compiled,
-            $this,
-            $viewData
-        ]);
+        return $this->compileShortcode($matches)->render();
     }
 
     /**
@@ -304,6 +296,8 @@ class ShortcodeManager
         $callback = $this->registered[$name];
         // if is a string
         if (is_string($callback)) {
+            if (is_a($callback, Component::class, true))
+                return $callback;
             // Parse the callback
             list($class, $method) = Str::parseCallback($callback, 'renderHtml');
             // If the class exist
@@ -449,6 +443,9 @@ class ShortcodeManager
     }
     public function register($shortocde)
     {
-        $this->registered[($shortocde)::getKey()] = $shortocde;
+        $this->registered[($shortocde)::getShortcodeKey()] = $shortocde;
+        if (is_a($shortocde, Component::class, true)) {
+            Livewire::component('shortcode::' . ($shortocde)::getShortcodeKey(), $shortocde);
+        }
     }
 }

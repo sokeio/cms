@@ -22,16 +22,16 @@ class ShortcodeSetting extends FormSettingCallback
                         ...collect(Shortcode::getRegistered())->map(function ($item, $key) {
                             return [
                                 'id' => $key,
-                                'name' => ($item)::getName()
+                                'name' => ($item)::getShortcodeName()
                             ];
                         })->toArray()
                     ];
                 })->WireLive(),
-                UI::Prex('data.attrs', ($shortcode)::getParamUI())->When(function () use ($shortcode) {
+                UI::Prex('data.attrs', ($shortcode)::getShortcodeParamUI())->When(function () use ($shortcode) {
                     return !!($shortcode);
                 }),
                 UI::Tinymce('children')->Label(__('Content'))->When(function () use ($shortcode) {
-                    return $this->data->shortcode != '' && ($shortcode)::EnableChildContent();
+                    return $this->data->shortcode != '' && ($shortcode)::EnableContent();
                 }),
             ]),
             UI::Column7([
