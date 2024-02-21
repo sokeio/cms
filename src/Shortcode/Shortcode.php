@@ -2,49 +2,137 @@
 
 namespace Sokeio\Cms\Shortcode;
 
-use Sokeio\Laravel\BaseCallback;
+use Illuminate\Contracts\Support\Arrayable;
+use Livewire\Component;
+use Livewire\Livewire;
 
-class Shortcode extends BaseCallback
+class Shortcode implements Arrayable
 {
-    public function boot()
+    /**
+     * Shortcode name
+     *
+     * @var string
+     */
+    protected $name;
+
+    /**
+     * Shortcode Attributes
+     *
+     * @var array
+     */
+    protected $attributes = [];
+
+    /**
+     * Shortcode content
+     *
+     * @var string
+     */
+    public $content;
+
+    /**
+     * Shortcode viewData
+     *
+     * @var array
+     */
+    protected $viewData;
+
+    /**
+     * Shortcode Callback
+     *
+     * @var array|string|null|callable
+     */
+    protected $callbacks;
+
+    /**
+     * Shortcode manager
+     *
+     * @var ShortcodeManager
+     */
+    protected $manager;
+
+    /**
+     * Constructor
+     *
+     * @param string $name
+     * @param string $content
+     * @param array  $attributes
+     */
+    public function __construct($name, $content, $attributes = [], $viewData = [], $callbacks = [], $manager = null)
     {
+        $this->name = $name;
+        $this->content = $content;
+        $this->attributes = $attributes;
+        $this->callbacks = $callbacks;
+        $this->viewData = $viewData;
+        $this->manager = $manager;
     }
-    protected function getAttributeValue($key)
+
+    /**
+     * Get html attribute
+     *
+     * @param  string $attribute
+     *
+     * @return string|null
+     */
+    public function get($attribute, $fallback = null)
     {
-        if (isset($this->getManager()?->attrs[$key])) {
-            return $this->getManager()?->attrs[$key];
+        $value = $this->{$attribute};
+        if (!is_null($value)) {
+            return $attribute . '="' . $value . '"';
+        } elseif (!is_null($fallback)) {
+            return $attribute . '="' . $fallback . '"';
         }
-        return null;
     }
 
-    public static function getName()
+    /**
+     * Get shortcode name
+     *
+     * @return string
+     */
+    public function getName()
     {
-    }
-    public static function getKey()
-    {
-    }
-    public static function getParamUI()
-    {
-        return [];
-    }
-    public static function EnableChildContent()
-    {
-        return true;
+        return $this->name;
     }
 
-    public function renderHtml(ShortcodeInfo $shortcode, ShortcodeManager $manager, $viewData = [])
+    /**
+     * Get shortcode attributes
+     *
+     * @return string
+     */
+    public function getContent()
     {
+        return $this->content;
     }
-    public function lazyloadView()
+
+    /**
+     * Return array of attributes;
+     *
+     * @return array
+     */
+    public function toArray()
     {
-        return null;
+        return $this->attributes;
     }
-    public function getView()
+
+    /**
+     * Dynamically get attributes
+     *
+     * @param  string $param
+     *
+     * @return string|null
+     */
+    public function __get($param)
     {
-        return 'cms::shortcode.post';
+        return isset($this->attributes[$param]) ? $this->attributes[$param] : null;
     }
-    public function getData()
+    public function render()
     {
-        return [];
+        if (isset($this->callbacks) && is_string($this->callbacks) && is_a($this->callbacks, Component::class)) {
+            return Livewire::mount($this->callbacks, []);
+        }
+        // Render the shortcode through the callback
+        return call_user_func_array($this->callbacks, [
+            $this,
+        ]);
     }
 }

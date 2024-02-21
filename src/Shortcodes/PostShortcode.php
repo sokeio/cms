@@ -2,15 +2,13 @@
 
 namespace Sokeio\Cms\Shortcodes;
 
-use Livewire\Livewire;
 use Sokeio\Cms\Models\Post;
-use Sokeio\Cms\Shortcode\Shortcode;
-use Sokeio\Cms\Shortcode\ShortcodeInfo;
-use Sokeio\Cms\Shortcode\ShortcodeManager;
+use Sokeio\Cms\Shortcode\WithShortcode;
 use Sokeio\Components\UI;
 
-class PostShortcode extends Shortcode
+class PostShortcode
 {
+    use WithShortcode;
 
     public static function getName()
     {
@@ -45,15 +43,6 @@ class PostShortcode extends Shortcode
             })
         ];
     }
-    public function renderHtml(ShortcodeInfo $shortcode, ShortcodeManager $manager, $viewData = [])
-    {
-        return Livewire::mount('cms::shortcode', [
-            'shortcode' => $shortcode->getName(),
-            'attrs' => $shortcode->toArray(),
-            'content' => $shortcode->getContent(),
-            'viewData' => $viewData
-        ]);
-    }
     public function getView()
     {
         return 'cms::shortcode.post';
@@ -65,5 +54,9 @@ class PostShortcode extends Shortcode
         return [
             'posts' => $query->get(['id', 'name', 'slug', 'image', 'description', 'created_at'])
         ];
+    }
+    public function test()
+    {
+        $this->getManager()->showMessage('test');
     }
 }

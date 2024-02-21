@@ -10,7 +10,7 @@ class ShortcodeSetting extends FormSettingCallback
 {
     public function SettingUI()
     {
-        $shortcode = Shortcode::getShortCodeByKey($this->data->shortcode);
+        $shortcode = Shortcode::getItemByKey($this->data->shortcode);
         return UI::Row([
             UI::Column([
                 UI::Select('shortcode')->Label(__('Shortcode'))->DataSource(function () {

@@ -8,8 +8,6 @@ use Livewire\Attributes\Reactive;
 
 class Shortcode extends Component
 {
-
-    
     #[Reactive]
     public $shortcode;
     #[Reactive]
@@ -28,6 +26,13 @@ class Shortcode extends Component
             ...parent::getListeners(),
             'refreshData' . $this->shortcode => '__loadData',
         ];
+    }
+    public function __call($method, $params)
+    {
+        if ($this->getShortcode() && method_exists($this->getShortcode(), $method)) {
+            return $this->getShortcode()->{$method}(...$params);
+        }
+        return parent::__call($method, $params);
     }
     protected function getShortcode()
     {

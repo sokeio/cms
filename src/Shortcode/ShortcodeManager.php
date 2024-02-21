@@ -217,7 +217,7 @@ class ShortcodeManager
      *
      * @param $matches
      *
-     * @return \Sokeio\Cms\Shortcode\ShortcodeInfo
+     * @return \Sokeio\Cms\Shortcode\Shortcode
      */
     protected function compileShortcode($matches)
     {
@@ -227,10 +227,12 @@ class ShortcodeManager
         $attributes = $this->parseAttributes($this->matches[3]);
 
         // return shortcode instance
-        return new ShortcodeInfo(
+        return new Shortcode(
             $this->getName(),
             $this->getContent($this->getName()),
-            $attributes
+            $attributes,
+            $this->_viewData,
+            $this->getCallback($this->getName())
         );
     }
 
@@ -441,7 +443,7 @@ class ShortcodeManager
         return $this->registered;
     }
 
-    public function getShortCodeByKey($key)
+    public function getItemByKey($key)
     {
         return is_string($key) && isset($this->registered[$key]) ? $this->registered[$key] : null;
     }
