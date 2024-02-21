@@ -1,3 +1,5 @@
 <div>
-    Nội dung gì dùng:
+    @foreach ($posts as $post)
+        <div>{{$post->name}}</div>
+    @endforeach
 </div>

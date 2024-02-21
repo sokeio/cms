@@ -27,7 +27,9 @@ class ShortcodeSetting extends FormSettingCallback
                         })->toArray()
                     ];
                 })->WireLive(),
-                ...(($shortcode) ? ($shortcode)::getParamUI() : []),
+                UI::Prex('data.attrs', ($shortcode)::getParamUI())->When(function () use ($shortcode) {
+                    return !!($shortcode);
+                }),
                 UI::Tinymce('children')->Label(__('Content'))->When(function () use ($shortcode) {
                     return $this->data->shortcode != '' && ($shortcode)::EnableChildContent();
                 }),

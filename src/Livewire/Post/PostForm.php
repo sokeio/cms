@@ -9,7 +9,6 @@ use Sokeio\Cms\Models\Catalog;
 use Sokeio\Cms\Models\Post;
 use Sokeio\Cms\Models\Tag;
 
-use function PHPUnit\Framework\returnSelf;
 
 class PostForm extends Form
 {
@@ -47,6 +46,7 @@ class PostForm extends Form
     }
     protected function saveAfter($post)
     {
+     
         $tagIds = collect(json_decode($this->tagIds, true))->map(function ($item) {
             if (isset($item['id'])) {
                 return $item['id'];
