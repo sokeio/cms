@@ -1,6 +1,7 @@
 @extends(theme_layout())
 @section('content')
-<div class="container">
-    Nội dung
-</div>
+    [cms::slide /]
+    <div class="container">
+
+    </div>
 @endsection

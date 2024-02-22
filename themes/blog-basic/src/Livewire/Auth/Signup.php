@@ -30,14 +30,14 @@ class Signup extends Component
             if ($role)
                 $user->roles()->sync([$role->id]);
         }
-        return redirect(route('admin.login'));
+        return redirect(route('site.login'));
     }
     public function mount()
     {
     }
     public function render()
     {
-        return view_scope('admin::auth.sign-up', [
+        return view_scope('theme::auth.sign-up', [
             'page_title' => __('Sigup account')
         ]);
     }

@@ -2,26 +2,26 @@
 
 namespace Sokeio\Cms\Shortcodes;
 
-use Sokeio\Cms\Models\Post;
 use Sokeio\Cms\Shortcode\WithShortcode;
 use Sokeio\Component;
 use Sokeio\Components\UI;
 
-class PostShortcode extends Component
+class SlideShortcode extends Component
 {
     use WithShortcode;
     public static function getShortcodeName()
     {
-        return __('cms::shortcode.post');
+        return __('cms::shortcode.slide');
     }
     public static function getShortcodeKey()
     {
-        return 'cms::post_list';
+        return 'cms::slide';
     }
     public static function getShortcodeParamUI()
     {
         return [
             UI::Text('title')->Label(__('Title')),
+            UI::Text('id')->Label(__('ID')),
             UI::Select('catalogs_id')->Label(__('Category'))->DataSource(function () {
                 return [
                     [
@@ -38,12 +38,18 @@ class PostShortcode extends Component
             })
         ];
     }
+    public function mount()
+    {
+        if (!isset($this->shortcodeAttrs['id'])) {
+            $this->shortcodeAttrs['id'] = 'slide-' . uniqid();
+        }
+    }
     public static function EnableContent()
     {
         return false;
     }
     public function render()
     {
-        return view('cms::shortcodes.post');
+        return view('cms::shortcodes.slide');
     }
 }

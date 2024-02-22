@@ -10,5 +10,6 @@ class ShortcodesServerProvider extends ServiceProvider
     public function boot()
     {
         Shortcode::register(PostShortcode::class);
+        Shortcode::register(SlideShortcode::class);
     }
 }

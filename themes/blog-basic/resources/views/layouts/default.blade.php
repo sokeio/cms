@@ -19,7 +19,7 @@
         @endphp
         <div class="page-wrapper">
             <!-- Page body -->
-            <div class="page-body">
+            <div class="page-body p-0 m-0">
                 @yield('content')
             </div>
         </div>

@@ -11,6 +11,8 @@ class ShortcodeSetting extends FormSettingCallback
     public function SettingUI()
     {
         $shortcode = Shortcode::getItemByKey($this->data->shortcode);
+        // if (!$shortcode) return UI::Div($shortcode . ' shortcode not found');
+        // if (!class_exists($shortcode)) return UI::Div($shortcode);
         return UI::Row([
             UI::Column([
                 UI::Select('shortcode')->Label(__('Shortcode'))->DataSource(function () {
@@ -27,7 +29,9 @@ class ShortcodeSetting extends FormSettingCallback
                         })->toArray()
                     ];
                 })->WireLive(),
-                UI::Prex('data.attrs', ($shortcode)::getShortcodeParamUI())->When(function () use ($shortcode) {
+                UI::Prex('data.attrs', function () use ($shortcode) {
+                    return (!!$shortcode) ? ($shortcode)::getShortcodeParamUI() : [];
+                })->When(function () use ($shortcode) {
                     return !!($shortcode);
                 }),
                 UI::Tinymce('children')->Label(__('Content'))->When(function () use ($shortcode) {
