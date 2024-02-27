@@ -12,7 +12,6 @@ use Sokeio\Facades\Menu;
 use Sokeio\Menu\MenuBuilder;
 use Sokeio\Cms\Livewire\PageView;
 use Sokeio\Cms\Models\Page;
-use Sokeio\Cms\Shortcode\ShortcodeserviceProvider;
 use Sokeio\Components\UI;
 use Sokeio\Laravel\ServicePackage;
 use Sokeio\Concerns\WithServiceProvider;
@@ -83,7 +82,6 @@ class CmsServiceProvider extends ServiceProvider
             return $prev;
         });
         
-        $this->app->register(ShortcodeserviceProvider::class);
         $this->app->register(ShortcodesServerProvider::class);
         Platform::Ready(function () {
 

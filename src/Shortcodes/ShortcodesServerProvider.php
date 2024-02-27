@@ -3,7 +3,7 @@
 namespace Sokeio\Cms\Shortcodes;
 
 use Illuminate\Support\ServiceProvider;
-use Sokeio\Cms\Facades\Shortcode;
+use Sokeio\Facades\Shortcode;
 
 class ShortcodesServerProvider extends ServiceProvider
 {

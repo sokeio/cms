@@ -3,7 +3,7 @@
 namespace Sokeio\Cms\Shortcodes;
 
 use Sokeio\Cms\Models\Post;
-use Sokeio\Cms\Shortcode\WithShortcode;
+use Sokeio\Shortcode\WithShortcode;
 use Sokeio\Component;
 use Sokeio\Components\UI;
 
