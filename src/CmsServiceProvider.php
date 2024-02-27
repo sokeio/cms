@@ -88,11 +88,7 @@ class CmsServiceProvider extends ServiceProvider
             MenuRender::RegisterType(MenuItemPage::class);
             MenuRender::RegisterType(MenuItemPost::class);
             MenuRender::RegisterType(MenuItemCategory::class);
-            if (sokeio_is_admin()) {
-
-                add_action('THEME_ADMIN_RIGHT', function () {
-                    echo '<div class="nav-item"><a class="nav-link fw-bold" target="_blank" href="' . url('/') . '">' . __('Visit Website') . '</a></div>';
-                });
+            if (sokeio_is_admin()) {               
                 add_filter('SOKEIO_ADMIN_SETTING_OVERVIEW', function ($prev) {
                     return [
                         ...$prev,
