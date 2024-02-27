@@ -152,9 +152,7 @@ class CmsServiceProvider extends ServiceProvider
                             $menu->route(['name' => 'admin.catalog', 'params' => []], 'Catalogs', '', [], 'admin.catalog');
                             $menu->route(['name' => 'admin.tag', 'params' => []], 'Tags', '', [], 'admin.tag');
                         })
-                        ->attachMenu('system_appearance_menu', function (MenuBuilder $menu) {
-                            $menu->route(['name' => 'admin.menu', 'params' => []], 'Menus', '', [], 'admin.menu');
-                        });
+                       ;
                 });
             }
         });
