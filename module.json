@@ -1,0 +1,12 @@
+{
+  "id": "sokeio/cms",
+  "name": "CMS",
+  "version": "v1.0.0",
+  "alias": "cms",
+  "description": "",
+  "keywords": [],
+  "priority": 200,
+  "aliases": {},
+  "namespace": "Sokeio\\CMS",
+  "requires": []
+}

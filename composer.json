@@ -1,0 +1,27 @@
+{
+    "name": "sokeio/cms",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nguyen Van Hau",
+            "email": "nguyenvanhaudev@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": ["Sokeio\\CMS\\CMSServiceProvider"],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+         "files": [
+            "helpers/constraint.php",
+            "helpers/function.php"
+        ],
+        "psr-4": {
+            "Sokeio\\CMS\\": "src",
+            "Sokeio\\CMS\\Database\\Factories\\": "database/factories",
+            "Sokeio\\CMS\\Database\\Seeders\\": "database/seeders"
+        }
+    }
+}
