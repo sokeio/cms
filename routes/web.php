@@ -12,8 +12,13 @@
 */
 
 use Illuminate\Support\Facades\Route;
+use Sokeio\CMS\Shortcode;
 use Sokeio\CMS\Template;
 
 Route::get('/templates', function () {
     return Template::getTemplates();
+});
+
+Route::get('/shortcodes', function () {
+    return Shortcode::all();
 });

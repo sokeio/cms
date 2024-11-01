@@ -1,3 +1,3 @@
 <div>
-    Home
+    Home [cms::demo][/cms::demo]
 </div>

@@ -1,6 +1,7 @@
 <?php
 
 return [
-    'name' => 'Demo',
+    'name' => 'cms',
+    'shortcodes-enabled' => true,
     'commands' => []
 ];

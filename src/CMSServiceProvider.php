@@ -3,6 +3,7 @@
 namespace Sokeio\CMS;
 
 use Illuminate\Support\ServiceProvider;
+use Sokeio\CMS\Support\Shortcode\ShortcodeServiceProvider;
 use Sokeio\CMS\Support\Template\TemplateServiceProvider;
 use Sokeio\ServicePackage;
 use Sokeio\Concerns\WithServiceProvider;
@@ -29,6 +30,7 @@ class CMSServiceProvider extends ServiceProvider
     }
     public function packageRegistered()
     {
+        $this->app->register(ShortcodeServiceProvider::class);
         $this->app->register(TemplateServiceProvider::class);
     }
 
