@@ -1,14 +1,21 @@
 <!doctype html>
 <html>
 <head>
-    @ThemeHead(before)
-    @ThemeHead(after)
+    @themeHead()
     @stack('styles')
 </head>
-<body class="{{themeClass()}}">
-    @ThemeBody(before)
-    @yield('content')
-    @ThemeBody(after)
+<body @themeBodyAttr() >
+    @themeBody
+    <div class="page">
+        @themeInclude('shared.header')
+        <div class="page-wrapper">
+            <div class="container-xxl">
+            @yield('content')
+            </div>
+        </div>
+        @themeInclude('shared.footer')
+    </div>
+    @themeBodyEnd
     @stack('scripts')
 </body>
 </html>

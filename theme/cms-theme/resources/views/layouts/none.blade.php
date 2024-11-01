@@ -1,14 +1,13 @@
 <!doctype html>
 <html>
 <head>
-    @ThemeHead(before)
-    @ThemeHead(after)
+    @themeHead()
     @stack('styles')
 </head>
-<body class="{{themeClass()}}">
-    @ThemeBody(before)
+<body @themeBodyAttr() >
+    @themeBody()
     @yield('content')
-    @ThemeBody(after)
+    @themeBodyEnd()
     @stack('scripts')
 </body>
 </html>

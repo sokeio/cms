@@ -5,6 +5,8 @@ namespace Sokeio\Theme\CMS;
 use Illuminate\Support\ServiceProvider;
 use Sokeio\ServicePackage;
 use Sokeio\Concerns\WithServiceProvider;
+use Sokeio\Platform;
+use Sokeio\Theme;
 
 class CMSServiceProvider extends ServiceProvider
 {
@@ -29,9 +31,22 @@ class CMSServiceProvider extends ServiceProvider
     {
         // packageRegistered
     }
-    
+
     public function packageBooted()
     {
-        // packageBooted
+        if (!Platform::isUrlAdmin()) {
+            Theme::linkJs(
+                url('platform/theme/admin/tabler/js/tabler.min.js'),
+                'https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta20/dist/js/tabler.min.js'
+            );
+            Theme::linkCss(
+                url('platform/theme/admin/tabler/css/tabler.min.css'),
+                'https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta20/dist/css/tabler.min.css'
+            );
+            Theme::linkCss(
+                url('platform/theme/admin/tabler-icon/tabler-icons.min.css'),
+                'https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/tabler-icons.min.css'
+            );
+        }
     }
 }

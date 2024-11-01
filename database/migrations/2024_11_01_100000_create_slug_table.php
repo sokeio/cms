@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('slugs', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
-            $table->string('slug')->index()->primary();
-            $table->monique('slug');
+            $table->string('slug', 500)->index()->unique();
+            $table->morphs('sluggable');
         });
     }
 
