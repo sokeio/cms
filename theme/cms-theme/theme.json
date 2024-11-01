@@ -1,0 +1,15 @@
+{
+  "id": "sokeio/theme-cms",
+  "name": "CMS Theme",
+  "version": "v1.0.0",
+  "alias": "cms-theme",
+  "description": "",
+  "keywords": [],
+  "priority": 200,
+  "aliases": {},
+  "namespace": "Sokeio\\Theme\\CMS",
+  "templates": [],
+  "locations": [],
+  "layout": "",
+  "requires": []
+}
