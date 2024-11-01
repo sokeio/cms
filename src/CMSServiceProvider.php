@@ -3,6 +3,7 @@
 namespace Sokeio\CMS;
 
 use Illuminate\Support\ServiceProvider;
+use Sokeio\CMS\Support\Template\TemplateServiceProvider;
 use Sokeio\ServicePackage;
 use Sokeio\Concerns\WithServiceProvider;
 
@@ -19,6 +20,7 @@ class CMSServiceProvider extends ServiceProvider
         $package
             ->name('sokeio-cms')
             ->hasConfigFile()
+            ->routeWeb()
             ->hasViews()
             ->hasHelpers()
             ->hasAssets()
@@ -27,7 +29,7 @@ class CMSServiceProvider extends ServiceProvider
     }
     public function packageRegistered()
     {
-        // packageRegistered
+        $this->app->register(TemplateServiceProvider::class);
     }
 
     public function packageBooted()
