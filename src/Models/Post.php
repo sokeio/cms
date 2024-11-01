@@ -2,10 +2,12 @@
 
 namespace Sokeio\CMS\Models;
 
+use Sokeio\CMS\Concerns\WithLocale;
 use Sokeio\Model;
 
 class Post extends Model
 {
+    use WithLocale;
     /**
      * The attributes that are mass assignable.
      *
@@ -18,7 +20,7 @@ class Post extends Model
         'description',
         'content',
         'image',
-        'status',
+        'published',
         'published_at',
         'password',
         'template',

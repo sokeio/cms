@@ -2,20 +2,24 @@
 
 namespace Sokeio\CMS\Models;
 
+use Sokeio\CMS\Concerns\WithLocale;
 use Sokeio\Model;
 
 class Catalog extends Model
 {
+    use WithLocale;
     /**
      * The attributes that are mass assignable.
      *
      * @var string[]
      */
     protected $fillable = [
+        'main_id',
+        'locale',
         'title',
         'description',
         'image',
-        'is_active',
+        'published',
         'template',
         'custom_js',
         'custom_css',

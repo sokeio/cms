@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('description', 400)->nullable()->default('');
             $table->longText('content')->nullable();
             $table->string('image', 255)->nullable();
-            $table->string('status', 60)->default('published');
+            $table->boolean('published')->default('published');
             $table->datetime('published_at')->nullable();
             $table->string('password')->nullable();
             $table->string('template', 255)->nullable();

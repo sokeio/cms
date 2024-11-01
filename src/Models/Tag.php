@@ -6,18 +6,13 @@ use Sokeio\Model;
 
 class Tag extends Model
 {
-
-    public function getSeoCanonicalUrl()
-    {
-        return route('tag.slug', ['tag' => $this->slug]);
-    }
     protected $fillable = [
+        'main_id',
+        'locale',
         'title',
         'description',
         'image',
-        'views',
-        'status',
-        'author_id',
+        'published',
         'updated_at',
         'created_at'
     ];

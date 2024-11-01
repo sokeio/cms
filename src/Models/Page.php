@@ -2,10 +2,12 @@
 
 namespace Sokeio\CMS\Models;
 
+use Sokeio\Cms\Concerns\WithLocale;
 use Sokeio\Model;
 
 class Page extends Model
 {
+    use WithLocale;
     /**
      * The attributes that are mass assignable.
      *
